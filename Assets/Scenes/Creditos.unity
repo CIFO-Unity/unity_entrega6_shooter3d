@@ -155,8 +155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.5235, y: -136.5}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -0.0000019073, y: -176}
+  m_SizeDelta: {x: 530.678, y: 436.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &590816996
 MonoBehaviour:
@@ -423,8 +423,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.5235, y: 1.0137}
-  m_SizeDelta: {x: 97.7704, y: 46.105}
+  m_AnchoredPosition: {x: 0.000015259, y: 272}
+  m_SizeDelta: {x: 287.57, y: 161.628}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &699124150
 MonoBehaviour:
@@ -448,8 +448,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Cr\xE9ditos"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b98617558f9d370429d793415f96f960, type: 2}
-  m_sharedMaterial: {fileID: 1330030018013422654, guid: b98617558f9d370429d793415f96f960, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3564ab38faf38174393feeddc866df07, type: 2}
+  m_sharedMaterial: {fileID: -3880698657308818138, guid: 3564ab38faf38174393feeddc866df07, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -473,8 +473,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 130
+  m_fontSizeBase: 130
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -759,8 +759,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -86.7}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.000015259, y: 106}
+  m_SizeDelta: {x: 341.563, y: 86.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1545145603
 MonoBehaviour:
@@ -784,8 +784,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Receta lentejas:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b98617558f9d370429d793415f96f960, type: 2}
-  m_sharedMaterial: {fileID: 1330030018013422654, guid: b98617558f9d370429d793415f96f960, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3564ab38faf38174393feeddc866df07, type: 2}
+  m_sharedMaterial: {fileID: -3880698657308818138, guid: 3564ab38faf38174393feeddc866df07, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -809,8 +809,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -847,7 +847,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 16.136475, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.06892014, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -939,7 +939,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enter text...
+  m_text: Introduce la receta...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
@@ -973,8 +973,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 2
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1069,7 +1069,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1690, y: 1020}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1157,8 +1157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5}
-  m_SizeDelta: {x: -20, y: -13}
+  m_AnchoredPosition: {x: 4.2789917, y: 2.6110077}
+  m_SizeDelta: {x: -105.43, y: -92.561}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1770372112
 MonoBehaviour:
