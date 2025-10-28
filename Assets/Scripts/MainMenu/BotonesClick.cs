@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class BotonesClick : MonoBehaviour
 {
-    private string escenaCambioCamaras = "CementerioCambioCamaras";
+    private string escenaJugar = "CementerioPrimeraPersona";
 
-    private string escenaPrimeraPersona = "CementerioPrimeraPersona";
+    private string escenaCreditos = "Creditos";
 
 private void Start()
     {
@@ -16,14 +16,14 @@ private void Start()
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
-    public void CargarEscenaCambioCamaras()
+    public void CargarEscenaCreditos()
     {
-        SceneManager.LoadScene(escenaCambioCamaras);
+        SceneManager.LoadScene(escenaCreditos);
     }
 
-    public void CargarEscenaPrimeraPersona()
+    public void CargarEscenaJugar()
     {
-        SceneManager.LoadScene(escenaPrimeraPersona);
+        SceneManager.LoadScene(escenaJugar);
     }
 
     public void SalirDelJuego()

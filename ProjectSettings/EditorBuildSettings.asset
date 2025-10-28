@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CementerioPrimeraPersona.unity
     guid: 0d3e8ba8a270442babcc3d13cfd359da
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: 63fa32a390696ea41849f6b374bb16ef
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

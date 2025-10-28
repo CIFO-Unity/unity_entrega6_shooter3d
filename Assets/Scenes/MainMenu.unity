@@ -480,8 +480,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 343712462}
   - {fileID: 557187087}
+  - {fileID: 343712462}
   - {fileID: 789672884}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -569,8 +569,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.000011444092, y: 0}
+  m_SizeDelta: {x: 24.3885, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &288689177
 MonoBehaviour:
@@ -594,8 +594,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Salir
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 49c98fd53aa15487dbaa10e19ea666ab, type: 2}
-  m_sharedMaterial: {fileID: 2280556940779312886, guid: 49c98fd53aa15487dbaa10e19ea666ab, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b98617558f9d370429d793415f96f960, type: 2}
+  m_sharedMaterial: {fileID: 1330030018013422654, guid: b98617558f9d370429d793415f96f960, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 15.4
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -827,7 +827,7 @@ GameObject:
   - component: {fileID: 343712463}
   - component: {fileID: 343712466}
   m_Layer: 5
-  m_Name: Button_CambioCamaras
+  m_Name: Button_Creditos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -850,8 +850,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 46, y: 200}
-  m_SizeDelta: {x: 320, y: 40}
+  m_AnchoredPosition: {x: 21.999985, y: -25.000013}
+  m_SizeDelta: {x: 213.772, y: 36.646}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &343712463
 MonoBehaviour:
@@ -897,9 +897,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1667554840}
+      - m_Target: {fileID: 1667554842}
         m_TargetAssemblyTypeName: BotonesClick, Assembly-CSharp
-        m_MethodName: CargarEscenaCambioCamaras
+        m_MethodName: CargarEscenaCreditos
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -964,7 +964,7 @@ MonoBehaviour:
   colorNormal: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   intensidadNormal: 1
   "tama\xF1oFuenteHover": 40
-  colorHover: {r: 0.7490196, g: 0.03886421, b: 0.03886421, a: 0.31764707}
+  colorHover: {r: 0.84705883, g: 0.03886421, b: 0.03886421, a: 0.31764707}
   intensidadHover: 1
   velocidadTransicion: 10
   transicionSuave: 1
@@ -1303,7 +1303,7 @@ GameObject:
   - component: {fileID: 557187088}
   - component: {fileID: 557187091}
   m_Layer: 5
-  m_Name: Button_PrimeraPersona
+  m_Name: Button_Jugar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1326,8 +1326,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 46.00003, y: 0}
-  m_SizeDelta: {x: 300, y: 40}
+  m_AnchoredPosition: {x: 36, y: 183}
+  m_SizeDelta: {x: 143.419, y: 45.528}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &557187088
 MonoBehaviour:
@@ -1373,9 +1373,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1667554840}
+      - m_Target: {fileID: 1667554842}
         m_TargetAssemblyTypeName: BotonesClick, Assembly-CSharp
-        m_MethodName: CargarEscenaPrimeraPersona
+        m_MethodName: CargarEscenaJugar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1440,7 +1440,7 @@ MonoBehaviour:
   colorNormal: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   intensidadNormal: 1
   "tama\xF1oFuenteHover": 40
-  colorHover: {r: 0.7490196, g: 0.03886421, b: 0.03886421, a: 0.31764707}
+  colorHover: {r: 0.84705883, g: 0.03886421, b: 0.03886421, a: 0.31764707}
   intensidadHover: 1
   velocidadTransicion: 10
   transicionSuave: 1
@@ -6470,7 +6470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 46.00003, y: -200}
+  m_AnchoredPosition: {x: 36.000053, y: -208.00002}
   m_SizeDelta: {x: 90, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &789672885
@@ -6517,7 +6517,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1667554840}
+      - m_Target: {fileID: 1667554842}
         m_TargetAssemblyTypeName: BotonesClick, Assembly-CSharp
         m_MethodName: SalirDelJuego
         m_Mode: 1
@@ -6584,7 +6584,7 @@ MonoBehaviour:
   colorNormal: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   intensidadNormal: 1
   "tama\xF1oFuenteHover": 40
-  colorHover: {r: 0.7490196, g: 0.03886421, b: 0.03886421, a: 0.31764707}
+  colorHover: {r: 0.84705883, g: 0.03886421, b: 0.03886421, a: 0.31764707}
   intensidadHover: 1
   velocidadTransicion: 10
   transicionSuave: 1
@@ -6600,7 +6600,7 @@ GameObject:
   - component: {fileID: 795105485}
   - component: {fileID: 795105484}
   m_Layer: 5
-  m_Name: Text_CambioCamaras
+  m_Name: Text_Creditos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6645,10 +6645,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cambio C\xE1maras"
+  m_text: Creditos
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 49c98fd53aa15487dbaa10e19ea666ab, type: 2}
-  m_sharedMaterial: {fileID: 2280556940779312886, guid: 49c98fd53aa15487dbaa10e19ea666ab, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b98617558f9d370429d793415f96f960, type: 2}
+  m_sharedMaterial: {fileID: 1330030018013422654, guid: b98617558f9d370429d793415f96f960, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6682,7 +6682,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 4
+  m_characterSpacing: 15.4
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -7949,7 +7949,7 @@ GameObject:
   - component: {fileID: 1624922992}
   - component: {fileID: 1624922991}
   m_Layer: 5
-  m_Name: Text_PrimeraPersona
+  m_Name: Text_Jugar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7994,10 +7994,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Primera Persona
+  m_text: Jugar
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 49c98fd53aa15487dbaa10e19ea666ab, type: 2}
-  m_sharedMaterial: {fileID: 2280556940779312886, guid: 49c98fd53aa15487dbaa10e19ea666ab, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b98617558f9d370429d793415f96f960, type: 2}
+  m_sharedMaterial: {fileID: 1330030018013422654, guid: b98617558f9d370429d793415f96f960, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8031,7 +8031,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 15.4
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -8155,7 +8155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1667554841}
-  - component: {fileID: 1667554840}
+  - component: {fileID: 1667554842}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Untagged
@@ -8163,18 +8163,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1667554840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1667554839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d2b0a706d5cb7640ba4d0a822410aea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1667554841
 Transform:
   m_ObjectHideFlags: 0
@@ -8190,6 +8178,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1667554842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667554839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d2b0a706d5cb7640ba4d0a822410aea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1715661414
 GameObject:
   m_ObjectHideFlags: 0
