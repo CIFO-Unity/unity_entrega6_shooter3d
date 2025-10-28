@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "VisitaVirtual.sln"
+    "dotnet.defaultSolution": "Shooter3D.sln"
 }
