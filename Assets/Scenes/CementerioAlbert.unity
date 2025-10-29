@@ -1192,6 +1192,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1098410938 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2595860937411673150, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
+  m_PrefabInstance: {fileID: 5655719292181124911}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1214239351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,6 +1567,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1367936982}
     m_Modifications:
     - target: {fileID: 2627454158810469936, guid: de6e3c6c2920c4c2d9fb70c6b9a8aada, type: 3}
+      propertyPath: puerta
+      value: 
+      objectReference: {fileID: 2097451036}
+    - target: {fileID: 2627454158810469936, guid: de6e3c6c2920c4c2d9fb70c6b9a8aada, type: 3}
       propertyPath: numLlave
       value: 2
       objectReference: {fileID: 0}
@@ -1761,7 +1770,7 @@ MonoBehaviour:
   municion: 50
   municionMaxima: 100
   tieneLlave1: 0
-  tieneLlave2: 1
+  tieneLlave2: 0
 --- !u!1001 &2073774249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1983,6 +1992,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorUI: {fileID: 741230902}
+--- !u!1 &2097451036 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 36492607278413146, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
+  m_PrefabInstance: {fileID: 5655719292181124911}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2122939574 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
@@ -2164,6 +2178,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1367936982}
     m_Modifications:
+    - target: {fileID: 2627454158810469936, guid: de6e3c6c2920c4c2d9fb70c6b9a8aada, type: 3}
+      propertyPath: puerta
+      value: 
+      objectReference: {fileID: 1098410938}
     - target: {fileID: 3462717619973455141, guid: de6e3c6c2920c4c2d9fb70c6b9a8aada, type: 3}
       propertyPath: m_Name
       value: Llave1

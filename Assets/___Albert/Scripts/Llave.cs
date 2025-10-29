@@ -3,10 +3,15 @@ using UnityEngine;
 public class Llave : MonoBehaviour
 {
     [SerializeField]
+    private GameObject puerta;
+    
+    [SerializeField]
     private int numLlave = 1;
 
     void Start()
     {
+        // La llave 2 tintarla de rojo 
+
         if (numLlave == 2)
         {
             MeshRenderer renderer = GetComponent<MeshRenderer>();
@@ -35,6 +40,14 @@ public class Llave : MonoBehaviour
             {
                 // Llama a la función ObtenerLlave del Player
                 jugador.ObtenerLlave(numLlave);
+
+                // Abrir puerta asociada a esta llave
+                if (puerta != null)
+                {
+                    Animator animatorPuerta = puerta.GetComponent<Animator>();
+                    bool estadoActual = animatorPuerta.GetBool("estadoPuertas");
+                    animatorPuerta.SetBool("estadoPuertas", !estadoActual);
+                }
             }
 
             // Destruye la llave
