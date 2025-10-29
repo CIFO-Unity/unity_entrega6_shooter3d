@@ -715,7 +715,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 288689177}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1667554842}
+        m_TargetAssemblyTypeName: BotonesClick, Assembly-CSharp
+        m_MethodName: SalirDelJuego
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &296971511 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8567072719342825206, guid: f4bac38393fc7464b8860f011c565933, type: 3}
@@ -941,19 +953,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 343712464}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1667554842}
-        m_TargetAssemblyTypeName: BotonesClick, Assembly-CSharp
-        m_MethodName: CargarEscenaCreditos
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &343712464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1417,19 +1417,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 557187089}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1667554842}
-        m_TargetAssemblyTypeName: BotonesClick, Assembly-CSharp
-        m_MethodName: CargarEscenaJugar
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &557187089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6561,19 +6549,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 789672886}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1667554842}
-        m_TargetAssemblyTypeName: BotonesClick, Assembly-CSharp
-        m_MethodName: SalirDelJuego
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &789672886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6813,7 +6789,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 795105484}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1667554842}
+        m_TargetAssemblyTypeName: BotonesClick, Assembly-CSharp
+        m_MethodName: CargarEscenaCreditos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -8207,7 +8195,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1624922991}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1667554842}
+        m_TargetAssemblyTypeName: BotonesClick, Assembly-CSharp
+        m_MethodName: CargarEscenaJugar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1627592900
 PrefabInstance:
   m_ObjectHideFlags: 0
