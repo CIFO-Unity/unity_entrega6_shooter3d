@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI textMunicion;
+
+    [SerializeField]
+    private Image imageLlave1;
 
     [Header("Vida")]
     [SerializeField]
@@ -25,6 +29,12 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int municionMaxima = 100;
 
+    [Header("Llaves")]
+    [SerializeField]
+    private bool tieneLlave1 = false;
+
+    [SerializeField]
+    private bool tieneLlave2 = false;
 
     #region Getters & Setters
 
@@ -36,6 +46,12 @@ public class Player : MonoBehaviour
         {
             vida = Mathf.Clamp(value, 0, vidaMaxima);
             ActualizarSliderVida();
+
+            // Si la vida llega a 0 o menos, cargar escena Perder
+            if (vida <= 0)
+            {
+                CargarEscenaPerder();
+            }
         }
     }
 
@@ -64,6 +80,12 @@ public class Player : MonoBehaviour
         if (textMunicion != null)
         {
             ActualizarTextoMunicion(); // Inicializa el texto al comenzar
+        }
+
+        if (imageLlave1 != null)
+        {
+            if(!tieneLlave1)
+                imageLlave1.gameObject.SetActive(false); // Desactiva la imagen de la llave al inicio
         }
     }
 
@@ -129,6 +151,20 @@ public class Player : MonoBehaviour
 
     #endregion
 
+    #region Llaves
+
+    public void ObtenerLlave()
+    {
+        tieneLlave1 = true;
+
+        if (imageLlave1 != null)
+        {
+            imageLlave1.gameObject.SetActive(true); // Muestra la imagen de la llave
+        }
+    }
+
+    #endregion
+
     #region UI
 
     private void ActualizarSliderVida()
@@ -145,6 +181,15 @@ public class Player : MonoBehaviour
         {
             textMunicion.text = $"{municion}/{municionMaxima}";
         }
+    }
+
+    #endregion
+
+    #region Escena Perder
+
+    private void CargarEscenaPerder()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     #endregion
