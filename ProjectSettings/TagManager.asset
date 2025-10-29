@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Calabaza
   - Farola
+  - FxTemporaire
+  - Bala
   layers:
   - Default
   - TransparentFX
