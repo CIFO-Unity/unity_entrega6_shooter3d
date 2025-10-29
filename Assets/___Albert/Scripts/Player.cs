@@ -164,6 +164,8 @@ public class Player : MonoBehaviour
         if (cantidad > 0)
         {
             Vida -= cantidad; // Usa el setter, así se aplica Clamp automáticamente
+
+            sonidos.gameObject.transform.GetChild(0).gameObject.GetComponent<AudioSource>().Play(); // Reproducir sonido
         }
     }
 
@@ -225,6 +227,22 @@ public class Player : MonoBehaviour
                 imageLlave2.color = Color.red;
             }
         }
+    }
+
+    public bool TieneLlave(int numLlave)
+    {
+        if (numLlave == 1)
+        {
+            if (tieneLlave1) return true;
+            else return false;
+        }
+        else if (numLlave == 2)
+        {
+            if (tieneLlave2) return true;
+            else return false;
+        }
+
+        else return false;
     }
 
     #endregion
