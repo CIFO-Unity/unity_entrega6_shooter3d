@@ -1980,6 +1980,7 @@ GameObject:
   - component: {fileID: 1985451585}
   - component: {fileID: 1985451587}
   - component: {fileID: 1985451586}
+  - component: {fileID: 1985451588}
   m_Layer: 0
   m_Name: TextCronometro
   m_TagString: Untagged
@@ -2105,6 +2106,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985451584}
   m_CullTransparentMesh: 1
+--- !u!114 &1985451588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985451584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cea8c7cd031f4ebf939dceb11fe73a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeRemaining: 180
+  timerIsRunning: 0
+  timeText: {fileID: 1985451586}
 --- !u!1 &2045579751 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
