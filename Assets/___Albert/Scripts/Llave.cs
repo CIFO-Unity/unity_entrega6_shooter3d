@@ -2,6 +2,27 @@ using UnityEngine;
 
 public class Llave : MonoBehaviour
 {
+    [SerializeField]
+    private int numLlave = 1;
+
+    void Start()
+    {
+        if (numLlave == 2)
+        {
+            MeshRenderer renderer = GetComponent<MeshRenderer>();
+            if (renderer != null)
+            {
+                MaterialPropertyBlock mpb = new MaterialPropertyBlock();
+                renderer.GetPropertyBlock(mpb);
+
+                // Para URP/HDRP, la propiedad suele ser "_BaseColor"
+                mpb.SetColor("_BaseColor", Color.red);
+
+                renderer.SetPropertyBlock(mpb);
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         // Comprueba si el objeto que entra al trigger tiene el tag "Player"
@@ -13,7 +34,7 @@ public class Llave : MonoBehaviour
             if (jugador != null)
             {
                 // Llama a la función ObtenerLlave del Player
-                jugador.ObtenerLlave();
+                jugador.ObtenerLlave(numLlave);
             }
 
             // Destruye la llave

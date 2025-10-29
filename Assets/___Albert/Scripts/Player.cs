@@ -15,6 +15,20 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Image imageLlave1;
 
+    [SerializeField]
+    private Image imageLlave2;
+
+    [Header("Balas")]
+    [SerializeField]
+    private GameObject bala;
+    private GameObject balaClon;
+
+    [SerializeField]
+    private GameObject pivotBala;
+
+    [SerializeField]
+    private float fuerzaBala = 50;
+
     [Header("Vida")]
     [SerializeField]
     private int vida = 10;
@@ -36,6 +50,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private bool tieneLlave2 = false;
 
+
     #region Getters & Setters
 
     // Getter y Setter para Vida
@@ -47,10 +62,10 @@ public class Player : MonoBehaviour
             vida = Mathf.Clamp(value, 0, vidaMaxima);
             ActualizarSliderVida();
 
-            // Si la vida llega a 0 o menos, cargar escena Perder
+            // Si la vida llega a 0 o menos, cargar escena Derrota
             if (vida <= 0)
             {
-                CargarEscenaPerder();
+                CargarEscenaDerrota();
             }
         }
     }
@@ -82,18 +97,37 @@ public class Player : MonoBehaviour
             ActualizarTextoMunicion(); // Inicializa el texto al comenzar
         }
 
-        if (imageLlave1 != null)
+        if (!tieneLlave1 && imageLlave1 != null)
         {
-            if(!tieneLlave1)
-                imageLlave1.gameObject.SetActive(false); // Desactiva la imagen de la llave al inicio
+            // Aplica tint con el color #312B2B
+            imageLlave1.color = new Color(49f / 255f, 43f / 255f, 43f / 255f, 1f); // A=1 para opacidad total
+        }
+
+        if (!tieneLlave2 && imageLlave2 != null)
+        {
+            // Aplica tint con el color #312B2B
+            imageLlave2.color = new Color(49f / 255f, 43f / 255f, 43f / 255f, 1f); // A=1 para opacidad total
         }
     }
 
     void Update()
     {
-        // Ejemplo de prueba:
-        // if (Input.GetKeyDown(KeyCode.Space)) Vida -= 1;
-        // if (Input.GetKeyDown(KeyCode.M)) Municion += 10;
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Comprueba si el jugador tiene munición antes de disparar
+            if (Municion > 0)
+            {
+                // Instancia la bala
+                balaClon = (GameObject)Instantiate(bala, pivotBala.transform.position, Quaternion.identity);
+                balaClon.GetComponent<Rigidbody>().linearVelocity = transform.GetChild(0).forward * fuerzaBala;
+
+                // Resta una unidad de munición
+                RestarMunicion(1);
+
+                // Destruye la bala después de 5 segundos
+                Destroy(balaClon, 5.0f);
+            }
+        }
     }
 
     #endregion
@@ -153,13 +187,25 @@ public class Player : MonoBehaviour
 
     #region Llaves
 
-    public void ObtenerLlave()
+    public void ObtenerLlave(int numLlave)
     {
-        tieneLlave1 = true;
-
-        if (imageLlave1 != null)
+        if (numLlave == 1)
         {
-            imageLlave1.gameObject.SetActive(true); // Muestra la imagen de la llave
+            tieneLlave1 = true;
+
+            if (imageLlave1 != null)
+            {
+                imageLlave1.color = Color.white;
+            }
+        }
+        else if (numLlave == 2)
+        {
+            tieneLlave2 = true;
+
+            if (imageLlave2 != null)
+            {
+                imageLlave2.color = Color.red;
+            }
         }
     }
 
@@ -185,11 +231,11 @@ public class Player : MonoBehaviour
 
     #endregion
 
-    #region Escena Perder
+    #region Escena Derrota
 
-    private void CargarEscenaPerder()
+    private void CargarEscenaDerrota()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Derrota");
     }
 
     #endregion
