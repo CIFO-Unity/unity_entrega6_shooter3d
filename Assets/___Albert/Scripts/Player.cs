@@ -18,6 +18,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Image imageLlave2;
 
+    [Header("Sonidos")]
+    [SerializeField]
+    private GameObject sonidos;
+
     [Header("Balas")]
     [SerializeField]
     private GameObject bala;
@@ -25,6 +29,10 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private GameObject pivotBala;
+
+    [SerializeField]
+    private GameObject particulasArma;
+    private GameObject particulasArmaClon;
 
     [SerializeField]
     private float fuerzaBala = 50;
@@ -126,6 +134,12 @@ public class Player : MonoBehaviour
 
                 // Destruye la bala después de 5 segundos
                 Destroy(balaClon, 5.0f);
+
+                // Instancia las partículas
+                particulasArmaClon = (GameObject)Instantiate(particulasArma, pivotBala.transform.position, Quaternion.identity);
+
+                // Destruye las partículas después de 0.2 segundos
+                Destroy(particulasArmaClon, 0.2f);
             }
         }
     }
@@ -140,6 +154,8 @@ public class Player : MonoBehaviour
         if (cantidad > 0)
         {
             Vida += cantidad; // Usa el setter, así se aplica Clamp automáticamente
+
+            sonidos.gameObject.transform.GetChild(2).gameObject.GetComponent<AudioSource>().Play(); // Reproducir sonido
         }
     }
 
@@ -166,6 +182,8 @@ public class Player : MonoBehaviour
         if (cantidad > 0)
         {
             Municion += cantidad; // Usa el setter, así se aplica Clamp automáticamente
+
+            sonidos.gameObject.transform.GetChild(1).gameObject.GetComponent<AudioSource>().Play(); // Reproducir sonido
         }
     }
 
