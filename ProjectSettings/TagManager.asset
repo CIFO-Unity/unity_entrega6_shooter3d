@@ -8,6 +8,9 @@ TagManager:
   - Farola
   - FxTemporaire
   - Bala
+  - Vida
+  - Llave
+  - Municion
   layers:
   - Default
   - TransparentFX
