@@ -7,20 +7,19 @@ public class Vida : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Comprueba si el objeto que entra al trigger tiene el tag "Player"
         if (other.CompareTag("Player"))
         {
-            // Obtiene el componente Player del objeto que colisiona
             Player jugador = other.GetComponent<Player>();
-            
+
             if (jugador != null)
             {
-                // Llama a AñadirVida con la cantidad definida
-                jugador.AnadirVida(vidaAnadida);
+                // Solo añade vida si no está al máximo
+                if (!jugador.VidaAlMaximo())
+                {
+                    jugador.AnadirVida(vidaAnadida);
+                    Destroy(gameObject); // Solo se destruye si se ha usado
+                }
             }
-
-            // Destruye el objeto de vida
-            Destroy(gameObject);
         }
     }
 }

@@ -1108,7 +1108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a88912c4527649e18ceb674518aff92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 10
+  sliderVida: {fileID: 921280990}
+  textMunicion: {fileID: 218051127}
+  vida: 5
   vidaMaxima: 10
   municion: 50
   municionMaxima: 100

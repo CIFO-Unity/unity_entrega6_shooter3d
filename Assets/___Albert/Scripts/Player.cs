@@ -1,13 +1,24 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
+    [Header("UI")]
+    [SerializeField]
+    private Slider sliderVida;
+
+    [SerializeField]
+    private TextMeshProUGUI textMunicion;
+
+    [Header("Vida")]
     [SerializeField]
     private int vida = 10;
 
     [SerializeField]
     private int vidaMaxima = 10;
 
+    [Header("Munición")]
     [SerializeField]
     private int municion = 50;
 
@@ -21,14 +32,22 @@ public class Player : MonoBehaviour
     public int Vida
     {
         get { return vida; }
-        set { vida = Mathf.Clamp(value, 0, vidaMaxima); } // entre 0 y vidaMaxima
+        set
+        {
+            vida = Mathf.Clamp(value, 0, vidaMaxima);
+            ActualizarSliderVida();
+        }
     }
 
     // Getter y Setter para Municion
     public int Municion
     {
         get { return municion; }
-        set { municion = Mathf.Clamp(value, 0, municionMaxima); } // entre 0 y municionMaxima
+        set
+        {
+            municion = Mathf.Clamp(value, 0, municionMaxima);
+            ActualizarTextoMunicion();
+        }
     }
 
     #endregion
@@ -36,7 +55,16 @@ public class Player : MonoBehaviour
     #region Start & Update
     void Start()
     {
-        //Debug.Log($"Vida inicial: {vida}/{vidaMaxima}, Munición inicial: {municion}/{municionMaxima}");
+        if (sliderVida != null)
+        {
+            sliderVida.maxValue = vidaMaxima;
+            sliderVida.value = vida;
+        }
+
+        if (textMunicion != null)
+        {
+            ActualizarTextoMunicion(); // Inicializa el texto al comenzar
+        }
     }
 
     void Update()
@@ -56,7 +84,6 @@ public class Player : MonoBehaviour
         if (cantidad > 0)
         {
             Vida += cantidad; // Usa el setter, así se aplica Clamp automáticamente
-            //Debug.Log($"Vida aumentada: {vida}/{vidaMaxima}");
         }
     }
 
@@ -65,8 +92,13 @@ public class Player : MonoBehaviour
         if (cantidad > 0)
         {
             Vida -= cantidad; // Usa el setter, así se aplica Clamp automáticamente
-            //Debug.Log($"Vida reducida: {vida}/{vidaMaxima}");
         }
+    }
+
+    // Devuelve true si la vida está al máximo
+    public bool VidaAlMaximo()
+    {
+        return vida >= vidaMaxima;
     }
 
     #endregion
@@ -78,7 +110,6 @@ public class Player : MonoBehaviour
         if (cantidad > 0)
         {
             Municion += cantidad; // Usa el setter, así se aplica Clamp automáticamente
-            //Debug.Log($"Munición aumentada: {municion}/{municionMaxima}");
         }
     }
 
@@ -87,7 +118,32 @@ public class Player : MonoBehaviour
         if (cantidad > 0)
         {
             Municion -= cantidad; // Usa el setter, así se aplica Clamp automáticamente
-            //Debug.Log($"Munición reducida: {municion}/{municionMaxima}");
+        }
+    }
+
+    // Devuelve true si la munición está al máximo
+    public bool MunicionAlMaximo()
+    {
+        return municion >= municionMaxima;
+    }
+
+    #endregion
+
+    #region UI
+
+    private void ActualizarSliderVida()
+    {
+        if (sliderVida != null)
+        {
+            sliderVida.value = vida;
+        }
+    }
+
+    private void ActualizarTextoMunicion()
+    {
+        if (textMunicion != null)
+        {
+            textMunicion.text = $"{municion}/{municionMaxima}";
         }
     }
 
