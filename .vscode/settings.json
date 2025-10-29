@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "unity_entrega6_shooter3d.sln"
+    "dotnet.defaultSolution": "Shooter3D.sln"
 }
