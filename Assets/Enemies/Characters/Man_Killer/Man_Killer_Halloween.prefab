@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 3899570384704886107}
   m_Layer: 0
   m_Name: Man_Killer_Halloween
-  m_TagString: Untagged
+  m_TagString: Man_Killer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -298,8 +298,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447091343886021197}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: ce41ed363dd63304b9094d25c7818d62, type: 3}
-  m_Controller: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: e782fb44c6ea9804b9dcc8f3b93b0d9d, type: 3}
+  m_Controller: {fileID: 9100000, guid: a41582c3b5c608c4898970c058612733, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
