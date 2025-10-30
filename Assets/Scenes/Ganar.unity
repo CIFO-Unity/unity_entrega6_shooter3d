@@ -615,6 +615,7 @@ GameObject:
   m_Component:
   - component: {fileID: 588110821}
   - component: {fileID: 588110820}
+  - component: {fileID: 588110822}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -649,6 +650,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &588110822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588110819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8549decf23ac4e89aa20e61aad8f5c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recordTiempo: {fileID: 11400000, guid: b773cc3bafe3d4005a50c203fd5d11ce, type: 2}
+  textoRecord: {fileID: 1001629641}
 --- !u!1 &605264258
 GameObject:
   m_ObjectHideFlags: 0
