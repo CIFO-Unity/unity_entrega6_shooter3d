@@ -8,16 +8,9 @@ public class Bala : MonoBehaviour
     private GameObject impactoEnemigo;
     private GameObject impactoClon;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void DestruirBala()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        Destroy(this.gameObject);
     }
 
     private void OnCollisionEnter(Collision other)
@@ -30,7 +23,7 @@ public class Bala : MonoBehaviour
         else if (other.gameObject.tag == "Enemigo") // OJO FALTAN LOS ENEMIGOS
         {
             impactoClon = (GameObject)Instantiate(impactoEnemigo, this.gameObject.transform.position, Quaternion.identity);
-            Destroy(this.gameObject, 1.0f);
+            DestruirBala();
         }
     }
 }

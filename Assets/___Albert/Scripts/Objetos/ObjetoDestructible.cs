@@ -19,11 +19,13 @@ public class ObjetoDestructible : MonoBehaviour
                 Destroy(vfx, 2.0f); // Destruye el VFX después de 2 segundos
             }
 
-            // Destruir la calabaza
-            Destroy(gameObject);
+            // Llamar a DestruirBala si el objeto tiene el script Bala
+            Bala bala = other.gameObject.GetComponent<Bala>();
+            if (bala != null)
+                bala.DestruirBala();
 
-            // Destruir la bala
-            Destroy(other.gameObject);
+            // Destruir el objeto destructible
+            Destroy(gameObject);
         }
     }
 }
