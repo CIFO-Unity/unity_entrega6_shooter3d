@@ -138,3 +138,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30189455000bf47ba9fc8941569d59d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vidaAnadida: 1

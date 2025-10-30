@@ -16,13 +16,16 @@ public class Cronometro : MonoBehaviour
 
     void Start()
     {
-        // Inicia el temporizador
-        //timerIsRunning = true;
+        timerIsRunning = false;
+
+        this.gameObject.SetActive(false);
     }
 
     public void IniciarCronometro()
     {
         timerIsRunning = true;
+
+        this.gameObject.SetActive(true);
     }
 
     // Función para detener el temporizador manualmente
@@ -67,6 +70,22 @@ public class Cronometro : MonoBehaviour
                 timerIsRunning = false;
                 SceneManager.LoadScene("Derrota"); // Carga la escena de derrota
             }
+
+            // Pulsar P para guardar el tiempo manualmente
+            // --> Sólo para hacer pruebas
+            /*if (Input.GetKeyDown(KeyCode.P))
+            {
+                GuardarTiempoActual();
+                Debug.Log($"Tiempo guardado: {minutes}:{seconds:00}");
+            }*/
         }
+    }
+
+    public void GuardarTiempoActual()
+    {
+        ControladorBaseDeDatos cbd = Object.FindFirstObjectByType<ControladorBaseDeDatos>();
+
+        if (cbd != null)
+            cbd.GuardarTiempo(minutes, seconds);
     }
 }

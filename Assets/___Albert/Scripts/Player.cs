@@ -18,10 +18,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Image imageLlave2;
 
-    [Header("Sonidos")]
-    [SerializeField]
-    private GameObject sonidos;
-
     [Header("Balas")]
     [SerializeField]
     private GameObject bala;
@@ -155,7 +151,8 @@ public class Player : MonoBehaviour
         {
             Vida += cantidad; // Usa el setter, así se aplica Clamp automáticamente
 
-            sonidos.gameObject.transform.GetChild(2).gameObject.GetComponent<AudioSource>().Play(); // Reproducir sonido
+            if (SoundManager.Instance != null)
+                SoundManager.Instance.PlaySound("CogerVida");
         }
     }
 
@@ -165,7 +162,8 @@ public class Player : MonoBehaviour
         {
             Vida -= cantidad; // Usa el setter, así se aplica Clamp automáticamente
 
-            sonidos.gameObject.transform.GetChild(0).gameObject.GetComponent<AudioSource>().Play(); // Reproducir sonido
+            if (SoundManager.Instance != null)
+                SoundManager.Instance.PlaySound("RecibirGolpe");
         }
     }
 
@@ -185,7 +183,8 @@ public class Player : MonoBehaviour
         {
             Municion += cantidad; // Usa el setter, así se aplica Clamp automáticamente
 
-            sonidos.gameObject.transform.GetChild(1).gameObject.GetComponent<AudioSource>().Play(); // Reproducir sonido
+            if (SoundManager.Instance != null)
+                SoundManager.Instance.PlaySound("CogerMunicion");
         }
     }
 
@@ -217,6 +216,9 @@ public class Player : MonoBehaviour
             {
                 imageLlave1.color = Color.white;
             }
+
+            if (SoundManager.Instance != null)
+                SoundManager.Instance.PlaySound("CogerLlave");
         }
         else if (numLlave == 2)
         {
@@ -224,8 +226,11 @@ public class Player : MonoBehaviour
 
             if (imageLlave2 != null)
             {
-                imageLlave2.color = Color.red;
+                imageLlave2.color = Color.white;
             }
+
+            if (SoundManager.Instance != null)
+                SoundManager.Instance.PlaySound("CogerLlave");
         }
     }
 
@@ -261,7 +266,7 @@ public class Player : MonoBehaviour
     {
         if (textMunicion != null)
         {
-            textMunicion.text = $"{municion}/{municionMaxima}";
+            textMunicion.text = municion.ToString();
         }
     }
 
