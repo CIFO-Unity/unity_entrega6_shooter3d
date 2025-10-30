@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Image panelMuerte;
 
+    [SerializeField]
+    private Cronometro cronometro;
+
     [Header("Balas")]
     [SerializeField]
     private GameObject bala;
@@ -43,6 +46,7 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private int vidaMaxima = 10;
+    private int ultimoGolpe = -1; // Último sonido de golpe recibido reproducido; para evitar repetir el mismo dos veces seguidas
 
     [Header("Munición")]
     [SerializeField]
@@ -75,6 +79,12 @@ public class Player : MonoBehaviour
             {
                 if (SoundManager.Instance != null)
                     SoundManager.Instance.PlaySound("Morir");
+
+                // Detiene el cronómetro
+                if (cronometro != null)
+                {
+                    cronometro.DetenerCronometro();
+                }
 
                 // Ralentizar el juego
                 Time.timeScale = 0.3f; // 30% de velocidad
@@ -189,15 +199,23 @@ public class Player : MonoBehaviour
             {
                 if (SoundManager.Instance != null)
                 {
-                    // Genera un número aleatorio entre 1 y 6
-                    int golpeAleatorio = Random.Range(1, 7); // Random.Range es exclusivo en el máximo, por eso 7
+                    int golpeAleatorio;
 
-                    // Construye el nombre del sonido: RecibirGolpe1, RecibirGolpe2, ..., RecibirGolpe6
+                    // Genera un número diferente al último
+                    do
+                    {
+                        golpeAleatorio = Random.Range(1, 7); // 1 a 6 inclusive
+                    } while (golpeAleatorio == ultimoGolpe);
+
+                    // Guarda el sonido actual como último
+                    ultimoGolpe = golpeAleatorio;
+
+                    // Construye el nombre del sonido
                     string nombreSonido = $"RecibirGolpe{golpeAleatorio}";
 
-                    // Reproduce el sonido aleatorio
+                    // Reproduce el sonido
                     SoundManager.Instance.PlaySound(nombreSonido);
-                }            
+                }
             }
         }
     }

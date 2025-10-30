@@ -29,7 +29,7 @@ public class Cronometro : MonoBehaviour
     }
 
     // Función para detener el temporizador manualmente
-    public void PararGuardarCrono()
+    public void DetenerCronometro()
     {
         timerIsRunning = false;
     }
