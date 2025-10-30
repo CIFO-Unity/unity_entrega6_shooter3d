@@ -797,7 +797,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9220066649809937618}
   - component: {fileID: 7097936837743614895}
-  - component: {fileID: 8454561532577064982}
   m_Layer: 0
   m_Name: man-killer-halloween
   m_TagString: Untagged
@@ -941,29 +940,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0000028014183, y: -0.18126243, z: -0.017629802}
     m_Extent: {x: 0.9429025, y: 0.9510117, z: 0.2644699}
   m_DirtyAABB: 0
---- !u!136 &8454561532577064982
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2190467658973988140}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.9429025
-  m_Height: 1.9062111
-  m_Direction: 1
-  m_Center: {x: 0.0000028014183, y: 0.8606147, z: 0.0029766224}
 --- !u!1 &2285382657505578057
 GameObject:
   m_ObjectHideFlags: 0

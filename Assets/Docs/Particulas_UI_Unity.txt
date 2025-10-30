@@ -1,0 +1,126 @@
+Partículas mágicas flotando sobre un texto de créditos.(Ejemplo ChatGPT)
+
+------------------------------------------------------------------------
+
+🧰 REQUISITOS
+
+-   Unity 2021.3 o superior ✅
+-   Proyecto configurado con Universal Render Pipeline (URP) o HDRP
+-   Tener Shader Graph instalado (lo puedes verificar desde Window →
+    Package Manager → Unity Registry → Shader Graph)
+
+------------------------------------------------------------------------
+
+✨ PASO 1: Prepara el Canvas
+
+1.  Selecciona tu Canvas.
+
+2.  En el Inspector, cambia:
+
+    -   Render Mode → Screen Space - Camera
+    -   Asigna la Main Camera al campo Render Camera.
+
+3.  Agrega este componente extra al Canvas:
+
+        Add Component → Canvas → Additional Shader Channels
+
+    Y marca:
+
+        ✓ TexCoord1
+        ✓ Normal
+        ✓ Tangent
+
+👉 Esto permite que el Canvas pueda pasar más información a los shaders
+(necesario para efectos visuales dinámicos).
+
+------------------------------------------------------------------------
+
+🔮 PASO 2: Crea un Shader Graph para tus partículas
+
+1.  En tu carpeta Assets/, crea un nuevo shader:
+
+        Create → Shader → Universal Render Pipeline → Unlit Shader Graph
+
+    Llámalo por ejemplo:
+
+        UI_Particles.shadergraph
+
+2.  Haz doble clic para abrirlo.
+
+3.  En el Graph Inspector, cambia:
+
+    -   Target → Universal
+    -   Material Type → Unlit
+    -   Surface Type → Transparent
+    -   Blend Mode → Alpha
+    -   Render Face → Front
+
+------------------------------------------------------------------------
+
+💡 PASO 3: Diseña el efecto visual
+
+Puedes hacerlo de varias maneras, pero aquí tienes un ejemplo simple de
+partículas luminosas:
+
+1.  Añade estos nodos y conéctalos:
+
+      Nodo                           Conexión / Propósito
+      ------------------------------ ----------------------------------
+      Time                           Proporciona movimiento animado
+      Simple Noise (UV)              Genera textura aleatoria animada
+      Multiply (Noise × sin(Time))   Oscilación
+      Color                          Color base (ej. azul mágico)
+      Multiply (Color × Noise)       Control de opacidad
+      Output → Base Color / Alpha    Salida del fragment shader
+
+2.  Guarda el Shader (Ctrl+S).
+
+------------------------------------------------------------------------
+
+🧴 PASO 4: Crea un material con ese shader
+
+1.  Clic derecho en Assets/ → Create → Material.
+
+2.  Nómbralo UI_Particles_Mat.
+
+3.  En el Inspector, cámbiale el Shader a:
+
+        Shader Graphs/UI_Particles
+
+------------------------------------------------------------------------
+
+🪄 PASO 5: Añadir partículas en la UI
+
+Hay dos opciones:
+
+🔹 Opción A — Imagen animada tipo “partículas planas”
+
+1.  Dentro del Canvas → crea un UI → Raw Image.
+2.  Asigna el material UI_Particles_Mat.
+3.  Ajusta su tamaño y posición (por ejemplo, encima de los créditos).
+4.  Usa un script para animar su UV si quieres movimiento, o añade un
+    Animation Clip para rotar / mover.
+
+------------------------------------------------------------------------
+
+🔹 Opción B — Sistema de partículas tradicional sobre UI
+
+1.  Crea un Particle System (GameObject vacío).
+2.  En el componente Renderer, cambia:
+    -   Material → UI_Particles_Mat
+    -   Render Alignment → Facing
+    -   Sorting Layer → UI
+    -   Order in Layer → 2
+3.  Ahora el Particle System se renderizará con tu shader moderno,
+    integrado con el Canvas.
+
+------------------------------------------------------------------------
+
+🎨 CONSEJO: Mezcla con efectos bloom o post-procesado
+
+Si activas el URP Volume Profile y habilitas:
+
+    Bloom ✓
+
+entonces el brillo de tus partículas resaltará mucho más sobre el fondo
+oscuro.
