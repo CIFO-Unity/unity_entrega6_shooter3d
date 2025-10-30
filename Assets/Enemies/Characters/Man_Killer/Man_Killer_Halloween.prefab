@@ -265,6 +265,8 @@ GameObject:
   m_Component:
   - component: {fileID: 972693517548267767}
   - component: {fileID: 3899570384704886107}
+  - component: {fileID: 8783680311590460427}
+  - component: {fileID: 9008117139068081362}
   m_Layer: 0
   m_Name: Man_Killer_Halloween
   m_TagString: Man_Killer
@@ -302,7 +304,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: a41582c3b5c608c4898970c058612733, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -311,6 +313,56 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &8783680311590460427
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447091343886021197}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.46774107
+  m_Height: 1.9187454
+  m_Direction: 1
+  m_Center: {x: 0.032258905, y: 1, z: -4.4346343e-10}
+--- !u!54 &9008117139068081362
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447091343886021197}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &457484053815812752
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,7 +919,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -486228982906219664, guid: ce41ed363dd63304b9094d25c7818d62, type: 3}
+  m_Mesh: {fileID: -486228982906219664, guid: e782fb44c6ea9804b9dcc8f3b93b0d9d, type: 3}
   m_Bones:
   - {fileID: 4081304587486930896}
   - {fileID: 6620786774170023804}

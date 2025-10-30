@@ -264,6 +264,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6971007240926360389}
   - component: {fileID: 5240452576103429083}
+  - component: {fileID: 155305895154676652}
+  - component: {fileID: 7096458675371888481}
   m_Layer: 0
   m_Name: man-killer-halloween
   m_TagString: Untagged
@@ -280,7 +282,7 @@ Transform:
   m_GameObject: {fileID: 1009535103406096614}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0.293, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -407,6 +409,56 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0000028014183, y: -0.18126243, z: -0.017629802}
     m_Extent: {x: 0.9429025, y: 0.9510117, z: 0.2644699}
   m_DirtyAABB: 0
+--- !u!136 &155305895154676652
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009535103406096614}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.45635754
+  m_Height: 1.9062113
+  m_Direction: 1
+  m_Center: {x: 0.0000027814535, y: 0.8606148, z: -0.008668344}
+--- !u!54 &7096458675371888481
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009535103406096614}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &1249773070644952355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,7 +1173,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4015200517285678353}
   - component: {fileID: 969271902143018175}
-  - component: {fileID: 6119198111959609837}
   m_Layer: 0
   m_Name: Man_Killer_Halloween
   m_TagString: Man_Killer
@@ -1137,7 +1188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4644165120769082083}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.78258854, z: -0, w: -0.6225394}
+  m_LocalRotation: {x: -0, y: -0.7825866, z: 0, w: -0.62254184}
   m_LocalPosition: {x: 95.157814, y: -2.559, z: -49.925007}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -1168,29 +1219,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!136 &6119198111959609837
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4644165120769082083}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.46774107
-  m_Height: 1.9187454
-  m_Direction: 1
-  m_Center: {x: 0.032258905, y: 0.9293725, z: -4.4346343e-10}
 --- !u!1 &4717747303311621693
 GameObject:
   m_ObjectHideFlags: 0
