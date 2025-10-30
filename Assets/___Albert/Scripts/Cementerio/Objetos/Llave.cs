@@ -7,8 +7,10 @@ public class Llave : MonoBehaviour
 
     void Start()
     {
-        // La llave 2 tintarla de rojo 
+        // Ocultar la llave al inicio
+        this.gameObject.SetActive(false);
 
+        // La llave 2 tintarla de rojo 
         if (numLlave == 2)
         {
             MeshRenderer renderer = GetComponent<MeshRenderer>();
@@ -23,6 +25,11 @@ public class Llave : MonoBehaviour
                 renderer.SetPropertyBlock(mpb);
             }
         }
+    }
+
+    public void MostrarLlave()
+    {
+        this.gameObject.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
