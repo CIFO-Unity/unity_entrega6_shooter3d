@@ -35,8 +35,16 @@ public class TriggerPuerta : MonoBehaviour
                         if (animatorPuerta != null)
                             animatorPuerta.SetBool("estadoPuertas", true);
 
+                        if (SoundManager.Instance != null)
+                            SoundManager.Instance.PlaySound("AbrirPuerta");
+
                         Destroy(this.gameObject); // Destruye el trigger
                     }
+                }
+                else
+                {
+                    if (SoundManager.Instance != null)
+                        SoundManager.Instance.PlaySound("NecesitasLlave");
                 }
             }
         }

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Player : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private Image imageLlave2;
+
+    [SerializeField]
+    private Image panelMuerte;
 
     [Header("Balas")]
     [SerializeField]
@@ -69,7 +73,21 @@ public class Player : MonoBehaviour
             // Si la vida llega a 0 o menos, cargar escena Derrota
             if (vida <= 0)
             {
-                CargarEscenaDerrota();
+                if (SoundManager.Instance != null)
+                    SoundManager.Instance.PlaySound("Morir");
+
+                // Ralentizar el juego
+                Time.timeScale = 0.3f; // 30% de velocidad
+
+                // Mostrar el panel rojo
+                if (panelMuerte != null)
+                {
+                    panelMuerte.gameObject.SetActive(true);
+                    StartCoroutine(FadeRojo(panelMuerte, 0f, 0.2f, 4.0f));
+                }
+
+                // Llamar a la función de cargar la escena después de 3 segundos reales
+                StartCoroutine(CargarDerrotaConDelay(4.0f));
             }
         }
     }
@@ -116,6 +134,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(1))
+        {
+            RestarVida(1);
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             // Comprueba si el jugador tiene munición antes de disparar
@@ -162,8 +185,20 @@ public class Player : MonoBehaviour
         {
             Vida -= cantidad; // Usa el setter, así se aplica Clamp automáticamente
 
-            if (SoundManager.Instance != null)
-                SoundManager.Instance.PlaySound("RecibirGolpe");
+            if (Vida > 0)
+            {
+                if (SoundManager.Instance != null)
+                {
+                    // Genera un número aleatorio entre 1 y 6
+                    int golpeAleatorio = Random.Range(1, 7); // Random.Range es exclusivo en el máximo, por eso 7
+
+                    // Construye el nombre del sonido: RecibirGolpe1, RecibirGolpe2, ..., RecibirGolpe6
+                    string nombreSonido = $"RecibirGolpe{golpeAleatorio}";
+
+                    // Reproduce el sonido aleatorio
+                    SoundManager.Instance.PlaySound(nombreSonido);
+                }            
+            }
         }
     }
 
@@ -274,9 +309,36 @@ public class Player : MonoBehaviour
 
     #region Escena Derrota
 
+    private IEnumerator CargarDerrotaConDelay(float segundosReales)
+    {
+        // Espera usando tiempo real, sin verse afectado por Time.timeScale
+        yield return new WaitForSecondsRealtime(segundosReales);
+
+        // Restaurar la velocidad normal antes de cambiar de escena
+        Time.timeScale = 1f;
+
+        // Cargar la escena de Derrota
+        CargarEscenaDerrota();
+    }
+
     private void CargarEscenaDerrota()
     {
         SceneManager.LoadScene("Derrota");
+    }
+
+    private IEnumerator FadeRojo(Image img, float startAlpha, float endAlpha, float duration)
+    {
+        float t = 0f;
+        Color c = img.color;
+        while (t < duration)
+        {
+            t += Time.unscaledDeltaTime; // tiempo real
+            c.a = Mathf.Lerp(startAlpha, endAlpha, t / duration);
+            img.color = c;
+            yield return null;
+        }
+        c.a = endAlpha;
+        img.color = c;
     }
 
     #endregion

@@ -55,6 +55,9 @@ public class Cronometro : MonoBehaviour
                 // Resta tiempo
                 timeRemaining -= Time.deltaTime;
 
+                // Asegura que timeRemaining esté entre 0 y su valor máximo
+                timeRemaining = Mathf.Clamp(timeRemaining, 0f, Mathf.Infinity);
+
                 // Actualiza UI
                 if (timeText != null)
                 {

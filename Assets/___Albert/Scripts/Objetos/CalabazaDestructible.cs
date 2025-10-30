@@ -6,6 +6,9 @@ public class CalabazaDestructible : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bala"))
         {
+            if (SoundManager.Instance != null)
+                SoundManager.Instance.PlaySound("DestruirCalabaza");
+
             Destroy(gameObject);
         }
     }
