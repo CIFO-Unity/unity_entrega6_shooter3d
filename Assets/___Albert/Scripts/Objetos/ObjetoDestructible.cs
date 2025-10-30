@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class CalabazaDestructible : MonoBehaviour
+public class ObjetoDestructible : MonoBehaviour
 {
     [SerializeField] private GameObject vfxPrefab;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision other)
     {
-        if (collision.gameObject.CompareTag("Bala"))
+        if (other.gameObject.CompareTag("Bala"))
         {
             // Reproducir sonido
             if (SoundManager.Instance != null)
-                SoundManager.Instance.PlaySound("DestruirCalabaza");
+                SoundManager.Instance.PlaySound("DestruirObjeto");
 
             // Instanciar el VFX en la posición de la calabaza
             if (vfxPrefab != null)
@@ -21,6 +21,9 @@ public class CalabazaDestructible : MonoBehaviour
 
             // Destruir la calabaza
             Destroy(gameObject);
+
+            // Destruir la bala
+            Destroy(other.gameObject);
         }
     }
 }

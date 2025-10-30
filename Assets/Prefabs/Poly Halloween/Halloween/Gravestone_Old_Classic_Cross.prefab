@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 378371687055882400}
   - component: {fileID: 2496340281848695914}
   - component: {fileID: 3847584687416774867}
+  - component: {fileID: 6984574352010854586}
   m_Layer: 0
   m_Name: Gravestone_Old_Classic_Cross
   m_TagString: Untagged
@@ -109,3 +110,16 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3665659660010812236, guid: 43d4b110451be394e84506bccec01ea9, type: 3}
+--- !u!114 &6984574352010854586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4153502148593233343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee50851940a7f478faad21728aa33052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 100014, guid: 5332791ebce075d4a9e56f4581e7fb47, type: 3}

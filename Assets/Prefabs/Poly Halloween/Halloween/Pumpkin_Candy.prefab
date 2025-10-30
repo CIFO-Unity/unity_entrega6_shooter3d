@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4500670434325573601}
   - component: {fileID: 1842359979844361003}
   - component: {fileID: 1031593704171128748}
+  - component: {fileID: 540024030039633059}
   m_Layer: 0
   m_Name: Pumpkin_Candy
   m_TagString: Untagged
@@ -109,3 +110,16 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6250389225454248865, guid: 6c0e584b97c9c0e479d39c9e403d176b, type: 3}
+--- !u!114 &540024030039633059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185101493067283198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee50851940a7f478faad21728aa33052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 100014, guid: 5332791ebce075d4a9e56f4581e7fb47, type: 3}

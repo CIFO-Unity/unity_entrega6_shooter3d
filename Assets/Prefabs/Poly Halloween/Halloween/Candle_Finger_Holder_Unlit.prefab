@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2727601085693575723}
   - component: {fileID: 161731518340576993}
   - component: {fileID: 1584985955994839650}
+  - component: {fileID: 6959268665717356530}
   m_Layer: 0
   m_Name: Candle_Finger_Holder_Unlit
   m_TagString: Untagged
@@ -111,6 +112,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1893358621485506365, guid: bc143aed39b55a54c980e115fb698caa, type: 3}
+--- !u!114 &6959268665717356530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819007322492704564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee50851940a7f478faad21728aa33052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 100014, guid: 5332791ebce075d4a9e56f4581e7fb47, type: 3}
 --- !u!1 &5606726728656480025
 GameObject:
   m_ObjectHideFlags: 0

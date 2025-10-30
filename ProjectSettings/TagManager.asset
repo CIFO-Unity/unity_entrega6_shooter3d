@@ -12,6 +12,7 @@ TagManager:
   - Llave
   - Municion
   - Man_Killer
+  - ExplosionVFX
   layers:
   - Default
   - TransparentFX

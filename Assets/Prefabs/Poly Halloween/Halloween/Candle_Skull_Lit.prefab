@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 5644489402291241234}
   - component: {fileID: 7616069094056801752}
   - component: {fileID: 9110821476565821785}
+  - component: {fileID: 7656573889985026191}
   m_Layer: 0
   m_Name: Candle_Skull_Lit
   m_TagString: Untagged
@@ -231,3 +232,16 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2129225537859011175, guid: a19b1378b8bf9084786d3680c52774b5, type: 3}
+--- !u!114 &7656573889985026191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264468213022692365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee50851940a7f478faad21728aa33052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 100014, guid: 5332791ebce075d4a9e56f4581e7fb47, type: 3}

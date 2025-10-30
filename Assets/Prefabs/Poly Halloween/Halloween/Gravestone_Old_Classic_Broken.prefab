@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1647829656521695981}
   - component: {fileID: 3547344599637071399}
   - component: {fileID: 2808881397461551782}
+  - component: {fileID: 2595837491047550377}
   m_Layer: 0
   m_Name: Gravestone_Old_Classic_Broken
   m_TagString: Untagged
@@ -109,3 +110,16 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -49510865248186554, guid: fdec8e5b6b6bb784ba3d5d435ba8611e, type: 3}
+--- !u!114 &2595837491047550377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3042831833515112434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee50851940a7f478faad21728aa33052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 100014, guid: 5332791ebce075d4a9e56f4581e7fb47, type: 3}

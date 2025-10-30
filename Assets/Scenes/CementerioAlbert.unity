@@ -1187,7 +1187,7 @@ GameObject:
   - component: {fileID: 393290246}
   - component: {fileID: 393290247}
   m_Layer: 0
-  m_Name: DestruirCalabaza
+  m_Name: DestruirObjeto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1523,7 +1523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageMensaje: {fileID: 486030134}
-  spriteTienesLlave: {fileID: 21300000, guid: 02f5b7d95b6a8a345b901a16d39dcc2b, type: 3}
+  spriteTienesLlave: {fileID: 21300000, guid: 88ab90e95c4e54a668525690e074e8b1, type: 3}
   spriteNecesitasLlave: {fileID: 21300000, guid: 6cddaa2bd4648d24a959dc6b4fe2dfb6, type: 3}
 --- !u!1 &586518299
 GameObject:
@@ -4507,10 +4507,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 449544893}
     m_Modifications:
-    - target: {fileID: 2758128160775633590, guid: c7a6815f8bbf64a0d8bf57c9ac7d2293, type: 3}
-      propertyPath: vfxPrefab
-      value: 
-      objectReference: {fileID: 100014, guid: 5332791ebce075d4a9e56f4581e7fb47, type: 3}
     - target: {fileID: 3770710272518129127, guid: c7a6815f8bbf64a0d8bf57c9ac7d2293, type: 3}
       propertyPath: m_LocalPosition.x
       value: -270.69336

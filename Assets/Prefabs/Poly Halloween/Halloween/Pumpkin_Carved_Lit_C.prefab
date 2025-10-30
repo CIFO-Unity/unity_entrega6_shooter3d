@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4366299726205838619}
   - component: {fileID: 1980670409400553937}
   - component: {fileID: 917982943544085846}
+  - component: {fileID: 1490343398263449142}
   m_Layer: 0
   m_Name: Pumpkin_Carved_Lit_C
   m_TagString: Calabaza
@@ -110,6 +111,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6396926956492916267, guid: cb48af8bcbcc40046b5eef654bc2c396, type: 3}
+--- !u!114 &1490343398263449142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34970304474066948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee50851940a7f478faad21728aa33052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 100014, guid: 5332791ebce075d4a9e56f4581e7fb47, type: 3}
 --- !u!1 &4195652962713572803
 GameObject:
   m_ObjectHideFlags: 0

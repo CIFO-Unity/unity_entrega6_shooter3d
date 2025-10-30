@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4637628167681828311}
   - component: {fileID: 7473967083266871581}
   - component: {fileID: 8104589094693571994}
+  - component: {fileID: 3815493207351888053}
   m_Layer: 0
   m_Name: Book_Magical_Eye
   m_TagString: Untagged
@@ -109,3 +110,16 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 994054799693211971, guid: cf07d82e7f6c3fc4fa85aea2404ee1a0, type: 3}
+--- !u!114 &3815493207351888053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8986969368549798088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee50851940a7f478faad21728aa33052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 100014, guid: 5332791ebce075d4a9e56f4581e7fb47, type: 3}

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4470262855229581465}
   - component: {fileID: 3010662673897993240}
   - component: {fileID: 3010662673897993241}
+  - component: {fileID: 9125033578251308956}
   m_Layer: 0
   m_Name: Book_Evil_Open
   m_TagString: Untagged
@@ -132,3 +133,16 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -851506137877018919, guid: 33008c432a7348145bf33a979a3b214a, type: 3}
+--- !u!114 &9125033578251308956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668783078024579404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee50851940a7f478faad21728aa33052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 100014, guid: 5332791ebce075d4a9e56f4581e7fb47, type: 3}
