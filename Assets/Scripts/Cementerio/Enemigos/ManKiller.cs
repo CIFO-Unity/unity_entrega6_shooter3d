@@ -23,6 +23,8 @@ public class ManKiller : MonoBehaviour
         //print("Distancia: " + distancia);
         if(distancia < distanciaAlerta)
         {
+            //cambiar animacion para que entre el caminar
+            this.gameObject.GetComponent<Animator>().SetBool("Walking_ManKiller", true);
             //el enemigo se mueve hacia el jugador según la distancia puesta
             this.gameObject.GetComponent<NavMeshAgent>().SetDestination(fpsController.transform.position);
         }
