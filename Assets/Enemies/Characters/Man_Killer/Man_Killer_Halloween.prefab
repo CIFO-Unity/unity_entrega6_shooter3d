@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 8783680311590460427}
   - component: {fileID: 9008117139068081362}
   - component: {fileID: -6310852668642581301}
+  - component: {fileID: 2983698838868377513}
   m_Layer: 0
   m_Name: Man_Killer_Halloween
   m_TagString: Man_Killer
@@ -386,6 +387,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2983698838868377513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447091343886021197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45042aeea37989f429c56ff487b03442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &457484053815812752
 GameObject:
   m_ObjectHideFlags: 0
