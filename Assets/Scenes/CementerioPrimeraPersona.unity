@@ -13628,6 +13628,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6310852668642581301, guid: 138bea4fcc575f24bb71a706968042c1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 447091343886021197, guid: 138bea4fcc575f24bb71a706968042c1, type: 3}
       propertyPath: m_Name
       value: Man_Killer_Halloween
@@ -13671,6 +13675,22 @@ PrefabInstance:
     - target: {fileID: 972693517548267767, guid: 138bea4fcc575f24bb71a706968042c1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783680311590460427, guid: 138bea4fcc575f24bb71a706968042c1, type: 3}
+      propertyPath: m_Radius
+      value: 0.45484304
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783680311590460427, guid: 138bea4fcc575f24bb71a706968042c1, type: 3}
+      propertyPath: m_Center.x
+      value: 0.032258905
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783680311590460427, guid: 138bea4fcc575f24bb71a706968042c1, type: 3}
+      propertyPath: m_Center.y
+      value: 1.0000107
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783680311590460427, guid: 138bea4fcc575f24bb71a706968042c1, type: 3}
+      propertyPath: m_Center.z
+      value: -0.012898205
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
