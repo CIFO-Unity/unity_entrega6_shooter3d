@@ -5,6 +5,7 @@ public class ManKiller : MonoBehaviour
 {
 
     private GameObject fpsController;
+    private bool bloquearAtaque1;
     //distancia al jugador
     private float distancia;
     [Header("Ajustes ManKiller")]
@@ -15,10 +16,16 @@ public class ManKiller : MonoBehaviour
     [SerializeField]
     private float velocidadManKillerAndando = 3.5f;
 
+    private void DesbloquearAtaque1()
+    {
+        bloquearAtaque1 = false;
+    }      
+    
     void Start()
     {
         //instancia del jugador
         fpsController = GameObject.FindWithTag("Player");
+        bloquearAtaque1 = false;
     }
 
     // Update is called once per frame
@@ -26,8 +33,23 @@ public class ManKiller : MonoBehaviour
     {
         //calculamos distancia entre el enemigo y el jugador
         distancia = Vector3.Distance(this.gameObject.transform.position, fpsController.transform.position);
-        //print("Distancia: " + distancia);
-        if (distancia < distanciaAlertaManKiller)
+
+        print("distancia: " + distancia);
+
+        if(bloquearAtaque1 == false)
+        {
+            if (distancia < 4.0f)
+            {
+            bloquearAtaque1 = true;
+            //print("distancia: " + distancia);
+            //ajustamos velocidad del enemigo
+            this.gameObject.GetComponent<NavMeshAgent>().speed = 0.0f;
+                //cambiar animacion para que entre el caminar
+                this.gameObject.GetComponent<Animator>().SetTrigger("Attack_ManKiller");    
+            Invoke("DesbloquearAtaque1", 2.5f);        
+            }
+        }     
+        else if (distancia < distanciaAlertaManKiller)
         {
             //cambiar animacion para que entre el caminar
             this.gameObject.GetComponent<Animator>().SetFloat("Walking_ManKiller", 1.0f);
