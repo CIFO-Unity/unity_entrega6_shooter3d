@@ -74,31 +74,9 @@ public class Player : MonoBehaviour
             vida = Mathf.Clamp(value, 0, vidaMaxima);
             ActualizarSliderVida();
 
-            // Si la vida llega a 0 o menos, cargar escena Derrota
+            // Si la vida llega a 0 o menos, morir
             if (vida <= 0)
-            {
-                if (SoundManager.Instance != null)
-                    SoundManager.Instance.PlaySound("Morir");
-
-                // Detiene el cronómetro
-                if (cronometro != null)
-                {
-                    cronometro.DetenerCronometro();
-                }
-
-                // Ralentizar el juego
-                Time.timeScale = 0.3f; // 30% de velocidad
-
-                // Mostrar el panel rojo
-                if (panelMuerte != null)
-                {
-                    panelMuerte.gameObject.SetActive(true);
-                    StartCoroutine(FadeRojo(panelMuerte, 0f, 0.2f, 4.0f));
-                }
-
-                // Llamar a la función de cargar la escena después de 3 segundos reales
-                StartCoroutine(CargarDerrotaConDelay(4.0f));
-            }
+                Morir();
         }
     }
 
@@ -325,7 +303,65 @@ public class Player : MonoBehaviour
 
     #endregion
 
-    #region Escena Derrota
+    #region Escenas Ganar & Derrota
+
+    private void Ganar()
+    {
+        // Reproducir sonido de victoria
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.PlaySound("Victoria");
+
+        // Detiene el cronómetro
+        if (cronometro != null)
+            cronometro.DetenerCronometro();
+
+        // Ralentizar el juego
+        Time.timeScale = 0.3f; // 30% de velocidad
+
+        // Llamar a la función de cargar la escena después de 7 segundos
+        StartCoroutine(CargarDerrotaConDelay(7.0f));
+    }
+    
+    private void Morir()
+    {
+        // Reproducir sonido de muerte
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.PlaySound("Morir");
+
+        // Detiene el cronómetro
+        if (cronometro != null)
+            cronometro.DetenerCronometro();
+
+        // Ralentizar el juego
+        Time.timeScale = 0.3f; // 30% de velocidad
+
+        // Mostrar el panel rojo
+        if (panelMuerte != null)
+        {
+            panelMuerte.gameObject.SetActive(true);
+            StartCoroutine(FadeRojo(panelMuerte, 0f, 0.2f, 4.0f));
+        }
+
+        // Llamar a la función de cargar la escena después de 4 segundos
+        StartCoroutine(CargarDerrotaConDelay(4.0f));
+    }
+
+    private IEnumerator CargarGanarConDelay(float segundosReales)
+    {
+        // Espera usando tiempo real, sin verse afectado por Time.timeScale
+        yield return new WaitForSecondsRealtime(segundosReales);
+
+        // Restaurar la velocidad normal antes de cambiar de escena
+        Time.timeScale = 1f;
+
+        // Cargar la escena de Derrota
+        CargarEscenaGanar();
+    }
+
+    private void CargarEscenaGanar()
+    {
+        SceneManager.LoadScene("Ganar");
+    }
 
     private IEnumerator CargarDerrotaConDelay(float segundosReales)
     {

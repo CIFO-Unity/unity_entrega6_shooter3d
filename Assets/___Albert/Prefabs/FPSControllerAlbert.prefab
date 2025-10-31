@@ -326,11 +326,12 @@ MonoBehaviour:
   textMunicion: {fileID: 0}
   imageLlave1: {fileID: 0}
   imageLlave2: {fileID: 0}
-  sonidos: {fileID: 0}
+  panelMuerte: {fileID: 0}
+  cronometro: {fileID: 0}
   bala: {fileID: 2501035737396844677, guid: 23ac645a6cbe9401c9a4eed132add604, type: 3}
   pivotBala: {fileID: 3147248568991423111}
   particulasArma: {fileID: 100006, guid: a25f52a8a963244b7b742682695cda8c, type: 3}
-  fuerzaBala: 50
+  fuerzaBala: 100
   vida: 5
   vidaMaxima: 10
   municion: 50
