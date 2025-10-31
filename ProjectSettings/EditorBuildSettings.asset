@@ -12,14 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 204ea9bc88496dd47a14bfb0de470325
   - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: 7973c2b3e0e956a46adf1be9f9ad73d6
+  - enabled: 1
     path: Assets/Scenes/CementerioPrimeraPersona.unity
     guid: 88f41b44bdd82e846a65364d192a6cbe
   - enabled: 1
-    path: Assets/Scenes/CreditosFelix.unity
-    guid: 63fa32a390696ea41849f6b374bb16ef
-  - enabled: 1
     path: Assets/Scenes/Ganar.unity
-    guid: a828fba7012600f45a02fab12fb2631c
+    guid: 66314fc9a4a187844aa513373ac2f2ca
   - enabled: 1
     path: Assets/Scenes/Derrota.unity
     guid: 2f1166bb1fecb5d44be749dc6a0b3586
