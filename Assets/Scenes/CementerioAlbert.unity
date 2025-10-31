@@ -1491,7 +1491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageMensaje: {fileID: 486030134}
-  spriteTienesLlave: {fileID: 21300000, guid: 88ab90e95c4e54a668525690e074e8b1, type: 3}
+  spriteTienesLlave: {fileID: 21300000, guid: 12ceb9f94cef839439b9a7cddef3ce46, type: 3}
   spriteNecesitasLlave: {fileID: 21300000, guid: 6cddaa2bd4648d24a959dc6b4fe2dfb6, type: 3}
 --- !u!1 &586518299
 GameObject:
