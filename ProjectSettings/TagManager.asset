@@ -15,6 +15,10 @@ TagManager:
   - ExplosionVFX
   - EnemigoProvisional
   - Escenario
+  - Boy_Ghost
+  - Man_Ghost
+  - Bruja_Escoba
+  - Bruja
   layers:
   - Default
   - TransparentFX

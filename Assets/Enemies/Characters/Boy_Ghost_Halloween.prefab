@@ -832,7 +832,7 @@ GameObject:
   - component: {fileID: 7047592546918531980}
   m_Layer: 0
   m_Name: Boy_Ghost_Halloween
-  m_TagString: Untagged
+  m_TagString: Boy_Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
