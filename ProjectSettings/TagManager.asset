@@ -19,6 +19,8 @@ TagManager:
   - Man_Ghost
   - Bruja_Escoba
   - Bruja
+  - RightHandManKiller
+  - LeftHandManKiller
   layers:
   - Default
   - TransparentFX
