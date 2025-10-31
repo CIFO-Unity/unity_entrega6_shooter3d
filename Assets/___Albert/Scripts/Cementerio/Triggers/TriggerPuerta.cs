@@ -1,10 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TriggerPuerta : MonoBehaviour
 {
     [Header("Número de puerta que abre este trigger")]
     [SerializeField]
     private int numLlave = 1;
+
+    [SerializeField]
+    private Image imageLlave;
 
     [Header("Puerta que abre este trigger")]
     [SerializeField]
@@ -37,6 +41,9 @@ public class TriggerPuerta : MonoBehaviour
 
                         if (SoundManager.Instance != null)
                             SoundManager.Instance.PlaySound("AbrirPuerta");
+
+                        // Cambia opacidad de la imagen de la llave
+                        imageLlave.color = new Color(49f / 255f, 43f / 255f, 43f / 255f, 1f);
 
                         Destroy(this.gameObject); // Destruye el trigger
                     }
