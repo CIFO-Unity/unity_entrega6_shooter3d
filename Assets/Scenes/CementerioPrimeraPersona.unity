@@ -15067,7 +15067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.620245
+      value: 2.42
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15100,6 +15100,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14300000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
+      propertyPath: m_Height
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5750473902355325517, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: cronometro
