@@ -326,6 +326,10 @@ MonoBehaviour:
   textMunicion: {fileID: 0}
   imageLlave1: {fileID: 0}
   imageLlave2: {fileID: 0}
+  panelVictoria: {fileID: 0}
+  textTiempoActual: {fileID: 0}
+  textMejorTiempo: {fileID: 0}
+  recordTiempo: {fileID: 11400000, guid: b773cc3bafe3d4005a50c203fd5d11ce, type: 2}
   panelMuerte: {fileID: 0}
   cronometro: {fileID: 0}
   bala: {fileID: 2501035737396844677, guid: 23ac645a6cbe9401c9a4eed132add604, type: 3}

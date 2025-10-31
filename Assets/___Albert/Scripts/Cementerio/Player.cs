@@ -20,6 +20,18 @@ public class Player : MonoBehaviour
     private Image imageLlave2;
 
     [SerializeField]
+    private Image panelVictoria;
+
+    [SerializeField]
+    private TextMeshProUGUI textTiempoActual;
+
+    [SerializeField]
+    private TextMeshProUGUI textMejorTiempo;
+
+    [SerializeField]
+    private RecordTiempo recordTiempo;
+
+    [SerializeField]
     private Image panelMuerte;
 
     [SerializeField]
@@ -118,6 +130,12 @@ public class Player : MonoBehaviour
             // Aplica tint con el color #312B2B
             imageLlave2.color = new Color(49f / 255f, 43f / 255f, 43f / 255f, 1f); // A=1 para opacidad total
         }
+
+        if (panelVictoria != null)
+            panelVictoria.gameObject.SetActive(false);
+
+        if (panelMuerte != null)
+            panelMuerte.gameObject.SetActive(false);
     }
 
     void Update()
@@ -311,12 +329,31 @@ public class Player : MonoBehaviour
         if (SoundManager.Instance != null)
             SoundManager.Instance.PlaySound("Victoria");
 
-        // Detiene el cronómetro
         if (cronometro != null)
+        {
+            // Detiene el cronómetro
             cronometro.DetenerCronometro();
+
+            // Guarda en disco el tiempo actual
+            cronometro.GuardarTiempoActual();
+
+            // Actualizar el tiempo en pantalla
+            AnadirTiempoActual(cronometro.GetMinutos(), cronometro.GetSeconds());
+        }
+
+        // Actualizar el tiempo en pantalla
+        if (recordTiempo != null)
+            AnadirMejorTiempo(recordTiempo.Minutos, recordTiempo.Segundos);
 
         // Ralentizar el juego
         Time.timeScale = 0.3f; // 30% de velocidad
+
+        // Mostrar el panel oscuro
+        if (panelVictoria != null)
+        {
+            panelVictoria.gameObject.SetActive(true);
+            StartCoroutine(FadeNegro(panelVictoria, 0f, 1.0f, 2.0f));
+        }
 
         // Llamar a la función de cargar la escena después de 7 segundos
         StartCoroutine(CargarGanarConDelay(7.0f));
@@ -380,6 +417,25 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene("Derrota");
     }
 
+    public IEnumerator FadeNegro(Image img, float startAlpha, float endAlpha, float duration)
+    {
+        float t = 0f;
+        Color c = Color.black;   // Color base negro
+        c.a = startAlpha;        // alpha inicial
+        img.color = c;
+
+        while (t < duration)
+        {
+            t += Time.unscaledDeltaTime; // tiempo real, ignora Time.timeScale
+            c.a = Mathf.Lerp(startAlpha, endAlpha, t / duration);
+            img.color = c;
+            yield return null;
+        }
+
+        c.a = endAlpha; 
+        img.color = c;
+    }
+
     private IEnumerator FadeRojo(Image img, float startAlpha, float endAlpha, float duration)
     {
         float t = 0f;
@@ -393,6 +449,28 @@ public class Player : MonoBehaviour
         }
         c.a = endAlpha;
         img.color = c;
+    }
+
+    #endregion
+
+    #region Tiempos
+
+    // Actualiza el texto del tiempo actual
+    public void AnadirTiempoActual(int minutos, int segundos)
+    {
+        if (textTiempoActual != null)
+        {
+            textTiempoActual.text = string.Format("Tiempo actual: {0}:{1:00}", minutos, segundos);
+        }
+    }
+
+    // Actualiza el texto del mejor tiempo
+    public void AnadirMejorTiempo(int minutos, int segundos)
+    {
+        if (textMejorTiempo != null)
+        {
+            textMejorTiempo.text = string.Format("Mejor tiempo: {0}:{1:00}", minutos, segundos);
+        }
     }
 
     #endregion

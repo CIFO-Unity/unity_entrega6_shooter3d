@@ -18,21 +18,13 @@ public class ControladorBaseDeDatos : MonoBehaviour
     // Guardar el tiempo si es mejor que el récord actual
     public void GuardarTiempo(int minutos, int segundos)
     {
-        if (rt.Minutos < minutos)
+        if (minutos > rt.Minutos || (minutos == rt.Minutos && segundos > rt.Segundos))
         {
             rt.Minutos = minutos;
             rt.Segundos = segundos;
         }
-        else if (rt.Minutos == minutos)
-        {
-            if (rt.Segundos < segundos)
-            {
-                rt.Minutos = minutos;
-                rt.Segundos = segundos;
-            }
-        }
     }
-
+    
     public int RetornarRecordMinutos()
     {
         return minutos;
