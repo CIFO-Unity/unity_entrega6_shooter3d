@@ -15,7 +15,7 @@ public class Bala : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Terreno") // OJO FALTA PONERLE EL TAG
+        if (other.gameObject.tag == "Escenario")
         {
             impactoClon = (GameObject)Instantiate(impacto, this.gameObject.transform.position, Quaternion.identity);
             Destroy(this.gameObject, 1.0f);

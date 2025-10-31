@@ -13,6 +13,8 @@ TagManager:
   - Municion
   - Man_Killer
   - ExplosionVFX
+  - EnemigoProvisional
+  - Escenario
   layers:
   - Default
   - TransparentFX
