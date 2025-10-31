@@ -10,7 +10,7 @@ public class ManKiller : MonoBehaviour
     [Header("Ajustes ManKiller")]
     //distancia para que el enemigo se active y persiga al jugador
     [SerializeField]
-    private float distanciaAlerta = 10.0f;
+    private float distanciaAlertaManKiller = 10.0f;
     //velocidad al andar de ManKiller
     [SerializeField]
     private float velocidadManKillerAndando = 3.5f;
@@ -27,7 +27,7 @@ public class ManKiller : MonoBehaviour
         //calculamos distancia entre el enemigo y el jugador
         distancia = Vector3.Distance(this.gameObject.transform.position, fpsController.transform.position);
         //print("Distancia: " + distancia);
-        if (distancia < distanciaAlerta)
+        if (distancia < distanciaAlertaManKiller)
         {
             //cambiar animacion para que entre el caminar
             this.gameObject.GetComponent<Animator>().SetFloat("Walking_ManKiller", 1.0f);
