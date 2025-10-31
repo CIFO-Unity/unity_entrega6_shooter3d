@@ -50,15 +50,16 @@ public class ManKiller : MonoBehaviour
                 {
                     //cambiar animacion para que entre el AttackPunch
                     this.gameObject.GetComponent<Animator>().SetTrigger("AttackPunchManKiller");
+                    Invoke("DesbloquearAtaque", 1.0f);
                 }
                 else
                 {
                     //cambiar animacion para que entre el Attack_ManKiller
                     this.gameObject.GetComponent<Animator>().SetTrigger("Attack_ManKiller");
-
+                    Invoke("DesbloquearAtaque", 2.5f);
                 }
 
-                Invoke("DesbloquearAtaque", 2.5f);
+
             }
             else if (distancia < distanciaAlertaManKiller)
             {
