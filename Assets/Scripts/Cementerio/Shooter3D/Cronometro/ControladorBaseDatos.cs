@@ -12,7 +12,7 @@ public class ControladorBaseDeDatos : MonoBehaviour
         minutos = rt.Minutos;
         segundos = rt.Segundos;
 
-        Debug.Log($"Tiempo guardado: {minutos}:{segundos:00}");
+        //Debug.Log($"Tiempo guardado: {minutos}:{segundos:00}");
     }
 
     // Guardar el tiempo si es mejor que el récord actual
