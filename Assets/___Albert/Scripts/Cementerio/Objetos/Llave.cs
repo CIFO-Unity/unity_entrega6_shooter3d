@@ -1,9 +1,12 @@
 using UnityEngine;
 
 public class Llave : MonoBehaviour
-{    
+{
     [SerializeField]
     private int numLlave = 1;
+    
+    [SerializeField]
+    private Llave llave2;
 
     void Start()
     {
@@ -45,6 +48,9 @@ public class Llave : MonoBehaviour
                 // Llama a la función ObtenerLlave del Player
                 jugador.ObtenerLlave(numLlave);
             }
+
+            if (numLlave == 1 && llave2 != null)
+                llave2.MostrarLlave();
 
             // Destruye la llave
             Destroy(gameObject);

@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class EnemigoProvisional : MonoBehaviour
+public class BossProvisional : MonoBehaviour
 {
-    [SerializeField] private EnemiesManager enemiesManager; // Referencia al manager de enemigos
+    [SerializeField] private Player player; // Referencia al jugador
 
     private void OnCollisionEnter(Collision other)
     {
@@ -17,13 +17,12 @@ public class EnemigoProvisional : MonoBehaviour
             if (SoundManager.Instance != null)
                 SoundManager.Instance.PlaySound("DestruirObjeto");
 
-            // Notificar a EnemiesManager que se ha destruido un enemigo
-            if (enemiesManager != null)
-                enemiesManager.ActualizarNumeroEnemigosMuertos();
+            // Notificar al Player que ha ganado
+            if (player != null)
+                player.Ganar();
 
-            // Destruir este enemigo
+            // Destruir este objeto (boss)
             Destroy(gameObject);
         }
     }
 }
-

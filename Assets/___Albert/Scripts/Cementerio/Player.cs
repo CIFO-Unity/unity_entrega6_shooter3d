@@ -305,7 +305,7 @@ public class Player : MonoBehaviour
 
     #region Escenas Ganar & Derrota
 
-    private void Ganar()
+    public void Ganar()
     {
         // Reproducir sonido de victoria
         if (SoundManager.Instance != null)
@@ -319,10 +319,10 @@ public class Player : MonoBehaviour
         Time.timeScale = 0.3f; // 30% de velocidad
 
         // Llamar a la función de cargar la escena después de 7 segundos
-        StartCoroutine(CargarDerrotaConDelay(7.0f));
+        StartCoroutine(CargarGanarConDelay(7.0f));
     }
     
-    private void Morir()
+    public void Morir()
     {
         // Reproducir sonido de muerte
         if (SoundManager.Instance != null)

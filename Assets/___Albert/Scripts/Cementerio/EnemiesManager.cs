@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class EnemiesManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField]
+    private int numeroEnemigosMuertos = 0;
+
+    [SerializeField]
+    private Llave llave1;
+
+    public void ActualizarNumeroEnemigosMuertos()
     {
-        
+        numeroEnemigosMuertos++;
+
+        if(numeroEnemigosMuertos == 10 && llave1 != null)
+            llave1.MostrarLlave();
     }
 
-    // Update is called once per frame
-    void Update()
+    public int NumeroEnemigosMuertos()
     {
-        
+        return numeroEnemigosMuertos;
     }
 }
