@@ -2687,9 +2687,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6497227424922818854, guid: f4bac38393fc7464b8860f011c565933, type: 3}
       insertIndex: -1
       addedObject: {fileID: 382253159}
-    - targetCorrespondingSourceObject: {fileID: 6497227424922818854, guid: f4bac38393fc7464b8860f011c565933, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 382253158}
   m_SourcePrefab: {fileID: 100100000, guid: f4bac38393fc7464b8860f011c565933, type: 3}
 --- !u!4 &382253155 stripped
 Transform:
@@ -2701,25 +2698,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6497227424922818854, guid: f4bac38393fc7464b8860f011c565933, type: 3}
   m_PrefabInstance: {fileID: 382253154}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &382253157 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8166682205180462307, guid: f4bac38393fc7464b8860f011c565933, type: 3}
-  m_PrefabInstance: {fileID: 382253154}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &382253158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382253156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 350970dd90752c94887ddf889ea3ae97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 382253157}
-  nombreParametro: estadoPuertas
 --- !u!65 &382253159
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15645,9 +15623,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4692724623747871498, guid: e0ff17931e0cd604f9658b2ae15aea66, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1825488335}
-    - targetCorrespondingSourceObject: {fileID: 4692724623747871498, guid: e0ff17931e0cd604f9658b2ae15aea66, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1825488334}
   m_SourcePrefab: {fileID: 100100000, guid: e0ff17931e0cd604f9658b2ae15aea66, type: 3}
 --- !u!4 &1825488332 stripped
 Transform:
@@ -15659,20 +15634,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4692724623747871498, guid: e0ff17931e0cd604f9658b2ae15aea66, type: 3}
   m_PrefabInstance: {fileID: 1825488331}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1825488334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825488333}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 350970dd90752c94887ddf889ea3ae97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1008667369}
-  nombreParametro: estadoLibros
 --- !u!65 &1825488335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19116,7 +19077,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Escenario
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8898768122533288524, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
+    - {fileID: 4901840299824921333, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
+    - {fileID: 2950311240618810888, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
+    - {fileID: 5813041591285320952, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
+    - {fileID: 2191532084679487013, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
+    - {fileID: 3595488530894286299, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
+    - {fileID: 2078291424048196221, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
     m_RemovedGameObjects:
     - {fileID: 2565121526161632901, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
     - {fileID: 7185513455439483681, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
