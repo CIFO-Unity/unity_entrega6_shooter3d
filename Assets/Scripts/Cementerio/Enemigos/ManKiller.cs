@@ -20,6 +20,9 @@ public class ManKiller : MonoBehaviour
     [SerializeField]
     private float velocidadManKillerAndando = 3.5f;
 
+    [SerializeField]
+    private EnemiesManager enemiesManager; // Referencia al manager de enemigos
+
     private void DesbloquearAtaque()
     {
         bloquearAtaque = false;
@@ -101,6 +104,10 @@ public class ManKiller : MonoBehaviour
             this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
             //Destruimos la bala tras el impacto
             //Destroy(other.gameObject, 0.0f);
+
+            // Notificar a EnemiesManager que se ha destruido un enemigo
+            if (enemiesManager != null)
+                enemiesManager.ActualizarNumeroEnemigosMuertos();
         }
     }
 }
