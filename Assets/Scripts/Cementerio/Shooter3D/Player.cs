@@ -474,4 +474,21 @@ public class Player : MonoBehaviour
     }
 
     #endregion
+
+    #region Interacción Enemigos
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print("Golpeado por ManKiller");
+
+        if (other.gameObject.tag == "LeftHandManKiller" || other.gameObject.tag == "RightHandManKiller")
+        {
+            print("Vida: " + vida);
+            // Resta vida al jugador al colisionar con Man_Killer
+            RestarVida(1);//Habrá que hacer una variable con el daño que hace el enemigo
+            
+        }
+    }
+
+    #endregion
 }
