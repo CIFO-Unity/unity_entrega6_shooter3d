@@ -63,12 +63,20 @@ public class ManKiller : MonoBehaviour
                         //cambiar animacion para que entre el AttackDouble
                         this.gameObject.GetComponent<Animator>().SetTrigger("AttackLeftHandManKiller");
                         Invoke("DesbloquearAtaque", 2.8f);
+
+                        // Reproducir sonido
+                        if (SoundManager.Instance != null)
+                            SoundManager.Instance.PlaySound("ManKillerAtaque");
                     }
                     else
                     {
                         //cambiar animacion para que entre el Attack_ManKiller
                         this.gameObject.GetComponent<Animator>().SetTrigger("Attack_ManKiller");
                         Invoke("DesbloquearAtaque", 2.5f);
+
+                        // Reproducir sonido
+                        if (SoundManager.Instance != null)
+                            SoundManager.Instance.PlaySound("ManKillerAtaque");
                     }
 
 
@@ -110,9 +118,9 @@ public class ManKiller : MonoBehaviour
             if (bala != null)
                 bala.DestruirBala();
 
-            // Reproducir sonido (si tienes SoundManager)
+            // Reproducir sonido
             if (SoundManager.Instance != null)
-                SoundManager.Instance.PlaySound("ImpactoEnemigo");
+                SoundManager.Instance.PlaySound("ManKillerMuerte");
 
             // Notificar a EnemiesManager que se ha destruido un enemigo
             if (enemiesManager != null)
