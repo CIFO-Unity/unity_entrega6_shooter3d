@@ -26,7 +26,7 @@ public class ManKiller : MonoBehaviour
     private void DesbloquearAtaque()
     {
         bloquearAtaque = false;
-        bloquearEnemigoMuerto = false;
+        //bloquearEnemigoMuerto = false;
     }
 
     void Start()
