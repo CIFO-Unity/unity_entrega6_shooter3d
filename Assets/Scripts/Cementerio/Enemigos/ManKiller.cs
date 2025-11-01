@@ -49,11 +49,12 @@ public class ManKiller : MonoBehaviour
                 //print("distancia: " + distancia);
                 //ajustamos velocidad del enemigo
                 this.gameObject.GetComponent<NavMeshAgent>().speed = 0.0f;
+
                 if (ataqueAleatorio == 0)
                 {
-                    //cambiar animacion para que entre el AttackPunch
-                    this.gameObject.GetComponent<Animator>().SetTrigger("AttackPunchManKiller");
-                    Invoke("DesbloquearAtaque", 1.0f);
+                    //cambiar animacion para que entre el AttackDouble
+                    this.gameObject.GetComponent<Animator>().SetTrigger("AttackLeftHandManKiller");
+                    Invoke("DesbloquearAtaque", 2.8f);
                 }
                 else
                 {

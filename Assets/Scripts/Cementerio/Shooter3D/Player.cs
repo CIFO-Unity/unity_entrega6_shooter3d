@@ -481,7 +481,15 @@ public class Player : MonoBehaviour
     {
         print("Golpeado por ManKiller");
 
-        if (other.gameObject.tag == "LeftHandManKiller" || other.gameObject.tag == "RightHandManKiller")
+        if (other.gameObject.tag == "RightHandManKiller")
+        {
+            print("Vida: " + vida);
+            // Resta vida al jugador al colisionar con Man_Killer
+            RestarVida(1);//Habrá que hacer una variable con el daño que hace el enemigo
+
+        }
+        
+        if (other.gameObject.tag == "LeftHandManKiller")
         {
             print("Vida: " + vida);
             // Resta vida al jugador al colisionar con Man_Killer
