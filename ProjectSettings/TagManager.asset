@@ -21,6 +21,7 @@ TagManager:
   - Bruja
   - RightHandManKiller
   - LeftHandManKiller
+  - FireBall
   layers:
   - Default
   - TransparentFX
