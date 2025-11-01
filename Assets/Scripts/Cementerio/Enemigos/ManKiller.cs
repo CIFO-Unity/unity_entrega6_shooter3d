@@ -8,6 +8,8 @@ public class ManKiller : MonoBehaviour
     private bool bloquearAtaque;
     private int ataqueAleatorio;
     private Vector3 posFPS;
+
+    private bool bloquearEnemigoMuerto;
     //distancia al jugador
     private float distancia;
     [Header("Ajustes ManKiller")]
@@ -21,6 +23,7 @@ public class ManKiller : MonoBehaviour
     private void DesbloquearAtaque()
     {
         bloquearAtaque = false;
+        bloquearEnemigoMuerto = false;
     }
 
     void Start()
@@ -33,64 +36,71 @@ public class ManKiller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //calculamos distancia entre el enemigo y el jugador
-        distancia = Vector3.Distance(this.gameObject.transform.position, fpsController.transform.position);
-
-        //posicion del jugador pero con la y del enemigo para que no se incline al mirar
-        posFPS = new Vector3(fpsController.transform.position.x, this.gameObject.transform.position.y, fpsController.transform.position.z);
-        //Miramos siempre al jugador
-        this.gameObject.transform.LookAt(posFPS);
-        if (bloquearAtaque == false)
+        if (!bloquearEnemigoMuerto)
         {
-            if (distancia < 4.0f)
-            {
-                ataqueAleatorio = Random.Range(0, 2);
-                bloquearAtaque = true;
-                //print("distancia: " + distancia);
-                //ajustamos velocidad del enemigo
-                this.gameObject.GetComponent<NavMeshAgent>().speed = 0.0f;
+            //calculamos distancia entre el enemigo y el jugador
+            distancia = Vector3.Distance(this.gameObject.transform.position, fpsController.transform.position);
 
-                if (ataqueAleatorio == 0)
+            //posicion del jugador pero con la y del enemigo para que no se incline al mirar
+            posFPS = new Vector3(fpsController.transform.position.x, this.gameObject.transform.position.y, fpsController.transform.position.z);
+            //Miramos siempre al jugador
+            this.gameObject.transform.LookAt(posFPS);
+            if (bloquearAtaque == false)
+            {
+                if (distancia < 4.0f)
                 {
-                    //cambiar animacion para que entre el AttackDouble
-                    this.gameObject.GetComponent<Animator>().SetTrigger("AttackLeftHandManKiller");
-                    Invoke("DesbloquearAtaque", 2.8f);
+                    ataqueAleatorio = Random.Range(0, 2);
+                    bloquearAtaque = true;
+                    //print("distancia: " + distancia);
+                    //ajustamos velocidad del enemigo
+                    this.gameObject.GetComponent<NavMeshAgent>().speed = 0.0f;
+
+                    if (ataqueAleatorio == 0)
+                    {
+                        //cambiar animacion para que entre el AttackDouble
+                        this.gameObject.GetComponent<Animator>().SetTrigger("AttackLeftHandManKiller");
+                        Invoke("DesbloquearAtaque", 2.8f);
+                    }
+                    else
+                    {
+                        //cambiar animacion para que entre el Attack_ManKiller
+                        this.gameObject.GetComponent<Animator>().SetTrigger("Attack_ManKiller");
+                        Invoke("DesbloquearAtaque", 2.5f);
+                    }
+
+
+                }
+                else if (distancia < distanciaAlertaManKiller)
+                {
+                    //cambiar animacion para que entre el caminar
+                    this.gameObject.GetComponent<Animator>().SetFloat("Walking_ManKiller", 1.0f);
+                    //el enemigo se mueve hacia el jugador según la distancia puesta
+                    this.gameObject.GetComponent<NavMeshAgent>().SetDestination(fpsController.transform.position);
+                    //ajustamos velocidad del enemigo
+                    this.gameObject.GetComponent<NavMeshAgent>().speed = velocidadManKillerAndando;
                 }
                 else
                 {
-                    //cambiar animacion para que entre el Attack_ManKiller
-                    this.gameObject.GetComponent<Animator>().SetTrigger("Attack_ManKiller");
-                    Invoke("DesbloquearAtaque", 2.5f);
+                    //cambiar animacion para que entre el idle
+                    this.gameObject.GetComponent<Animator>().SetFloat("Walking_ManKiller", 0.0f);
+                    //ponemos a cero la velocidad del enemigo
+                    this.gameObject.GetComponent<NavMeshAgent>().speed = 0.0f;
                 }
-
-
-            }
-            else if (distancia < distanciaAlertaManKiller)
-            {
-                //cambiar animacion para que entre el caminar
-                this.gameObject.GetComponent<Animator>().SetFloat("Walking_ManKiller", 1.0f);
-                //el enemigo se mueve hacia el jugador según la distancia puesta
-                this.gameObject.GetComponent<NavMeshAgent>().SetDestination(fpsController.transform.position);
-                //ajustamos velocidad del enemigo
-                this.gameObject.GetComponent<NavMeshAgent>().speed = velocidadManKillerAndando;
-            }
-            else
-            {
-                //cambiar animacion para que entre el idle
-                this.gameObject.GetComponent<Animator>().SetFloat("Walking_ManKiller", 0.0f);
-                //ponemos a cero la velocidad del enemigo
-                this.gameObject.GetComponent<NavMeshAgent>().speed = 0.0f;
             }
         }
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "Bala")
+        if (other.gameObject.tag == "Bala")
         {
-            //cambiar animacion para que entre el hit
+            bloquearEnemigoMuerto = true;
+            //cambiar animacion para que entre el morir
             this.gameObject.GetComponent<Animator>().SetTrigger("DieManKiller");
-            Destroy(this.gameObject, 3.0f);
+            //desactivamos collider para no empujar cadaver
+            this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            //Destruimos la bala tras el impacto
+            //Destroy(other.gameObject, 0.0f);
         }
     }
 }
