@@ -15154,7 +15154,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_Name
-      value: FPSControllerAlbert
+      value: FPSController
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18651,6 +18651,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Escenario
       objectReference: {fileID: 0}
+    - target: {fileID: 3768647913861715634, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.69
+      objectReference: {fileID: 0}
     - target: {fileID: 3768757019496628294, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
       propertyPath: m_TagString
       value: Escenario
@@ -18737,7 +18741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4929444819952672068, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4959430320970630824, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
       propertyPath: m_TagString
@@ -18930,6 +18934,14 @@ PrefabInstance:
     - target: {fileID: 6501000242765795557, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
       propertyPath: m_TagString
       value: Escenario
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545320652918218993, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545320652918218993, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 16.21
       objectReference: {fileID: 0}
     - target: {fileID: 6578179112173387807, guid: 6b4386f45be25413dae28e3b7489eaf4, type: 3}
       propertyPath: m_TagString
