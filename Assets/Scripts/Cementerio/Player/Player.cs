@@ -58,6 +58,9 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private int vidaMaxima = 10;
+
+    [SerializeField]
+    private int danoManKillerHalloween = 1;
     private int ultimoGolpe = -1; // Último sonido de golpe recibido reproducido; para evitar repetir el mismo dos veces seguidas
 
     [Header("Munición")]
@@ -140,6 +143,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        // Para debuggear que el usuario reciba daño
         if (Input.GetMouseButtonDown(1))
         {
             RestarVida(1);
@@ -173,7 +177,6 @@ public class Player : MonoBehaviour
 
     #region Vida
 
-    // 🔹 Nueva función para añadir vida
     public void AnadirVida(int cantidad)
     {
         if (cantidad > 0)
@@ -485,16 +488,14 @@ public class Player : MonoBehaviour
         {
             print("Vida: " + vida);
             // Resta vida al jugador al colisionar con Man_Killer
-            RestarVida(1);//Habrá que hacer una variable con el daño que hace el enemigo
-
+            RestarVida(danoManKillerHalloween);
         }
         
         if (other.gameObject.tag == "LeftHandManKiller")
         {
             print("Vida: " + vida);
             // Resta vida al jugador al colisionar con Man_Killer
-            RestarVida(1);//Habrá que hacer una variable con el daño que hace el enemigo
-            
+            RestarVida(danoManKillerHalloween);
         }
     }
 

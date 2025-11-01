@@ -12,7 +12,7 @@ public class ObjetoDestructible : MonoBehaviour
             if (SoundManager.Instance != null)
                 SoundManager.Instance.PlaySound("DestruirObjeto");
 
-            // Instanciar el VFX en la posición de la calabaza
+            // Instanciar el VFX en la posición del objeto
             if (vfxPrefab != null)
             {
                 GameObject vfx = Instantiate(vfxPrefab, transform.position, Quaternion.identity);
