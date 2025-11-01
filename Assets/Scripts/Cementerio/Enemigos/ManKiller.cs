@@ -83,4 +83,14 @@ public class ManKiller : MonoBehaviour
             }
         }
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag == "Bala")
+        {
+            //cambiar animacion para que entre el hit
+            this.gameObject.GetComponent<Animator>().SetTrigger("DieManKiller");
+            Destroy(this.gameObject, 3.0f);
+        }
+    }
 }
