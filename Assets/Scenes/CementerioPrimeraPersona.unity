@@ -18223,6 +18223,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7753866345646800813, guid: c23f25962d63d0742b95fe5d2122caa1, type: 3}
+      propertyPath: enemiesManager
+      value: 
+      objectReference: {fileID: 1260280847}
     - target: {fileID: -1632252441076018215, guid: c23f25962d63d0742b95fe5d2122caa1, type: 3}
       propertyPath: m_Height
       value: 1.9187454
