@@ -24,10 +24,13 @@ public class ManKiller : MonoBehaviour
     [SerializeField]
     private float velocidadManKillerAndando = 3.5f;
 
+    [SerializeField]
+    private EnemiesManager enemiesManager; // Referencia al manager de enemigos
+
     private void DesbloquearAtaque()
     {
         bloquearAtaque = false;
-        bloquearEnemigoMuerto = false;
+        //bloquearEnemigoMuerto = false;
     }
 
     void Start()
@@ -64,12 +67,20 @@ public class ManKiller : MonoBehaviour
                         //cambiar animacion para que entre el AttackDouble
                         this.gameObject.GetComponent<Animator>().SetTrigger("AttackLeftHandManKiller");
                         Invoke("DesbloquearAtaque", 2.8f);
+
+                        // Reproducir sonido
+                        if (SoundManager.Instance != null)
+                            SoundManager.Instance.PlaySound("ManKillerAtaque");
                     }
                     else
                     {
                         //cambiar animacion para que entre el Attack_ManKiller
                         this.gameObject.GetComponent<Animator>().SetTrigger("Attack_ManKiller");
                         Invoke("DesbloquearAtaque", 2.5f);
+
+                        // Reproducir sonido
+                        if (SoundManager.Instance != null)
+                            SoundManager.Instance.PlaySound("ManKillerAtaque");
                     }
 
 
@@ -98,17 +109,13 @@ public class ManKiller : MonoBehaviour
     {
         if (other.gameObject.tag == "Bala")
         {
-            vidaManKiller -= 1;
-            if(vidaManKiller<=0)
-            {
-                //bloqueamos a ManKiller para que no se reinicie tras muerte
-                bloquearEnemigoMuerto = true;
-                //cambiar animacion para que entre el morir
-                this.gameObject.GetComponent<Animator>().SetTrigger("DieManKiller");
-                //desactivamos collider para no empujar cadaver
-                this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
-            }
-            
+            bloquearEnemigoMuerto = true;
+            //cambiar animacion para que entre el morir
+            this.gameObject.GetComponent<Animator>().SetTrigger("DieManKiller");
+            //desactivamos collider para no empujar cadaver
+            this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            //Destruimos la bala tras el impacto
+            //Destroy(other.gameObject, 0.0f);
         }
     }
 }
