@@ -21,6 +21,17 @@ public class WomanWitch : MonoBehaviour
     [SerializeField]
     private GameObject particleImpactWomanWitchPrefab;
 
+    [Header("Fireball Settings")]
+    [Tooltip("Transform del objeto que representa la bola en la mano (usa su posición/rotación como spawn)")]
+    [SerializeField]
+    private Transform handFireballTransform;
+
+    [SerializeField]
+    private GameObject fireballPrefab; // prefab del proyectil (debe tener Rigidbody y partículas dentro)
+
+    [SerializeField]
+    private float fireballSpeed = 12f;
+
     [Header("Contar enemigos muertos")]
     [SerializeField]
     private EnemiesManager enemiesManager; // Referencia al manager de enemigos
@@ -121,16 +132,58 @@ public class WomanWitch : MonoBehaviour
 
     private void LanzamientoFireBall()
     {
-        //guardar location player
-        Vector3 posplayer = fpsController.transform.position;
-        Quaternion rotplayerplayer = fpsController.transform.rotation;
-        //guardar location woman witch
-        Vector3 pos = this.gameObject.transform.position;
-        Quaternion rot = this.gameObject.transform.rotation;
-        //instanciar partículas
-        if (particleImpactWomanWitchPrefab != null)
-            Instantiate(particleImpactWomanWitchPrefab, pos, rot);
-            //Lanzar con fuerza hacia la direccion de mirada del jugador
-            Vector3 direccionLanzamiento = (posplayer - pos).normalized;
+        // Asegurar referencia al jugador
+        if (fpsController == null)
+            fpsController = GameObject.FindWithTag("Player");
+
+        if (fpsController == null)
+        {
+            Debug.LogWarning("FPS Controller no encontrado. Cancelando lanzamiento de fireball.");
+            return;
+        }
+
+        // Posición objetivo (jugador) — preferimos la cámara del jugador si existe para apuntar al torso/ojos
+        Vector3 targetPos;
+        Camera playerCam = Camera.main;
+        if (playerCam != null)
+            targetPos = playerCam.transform.position;
+        else
+            targetPos = fpsController.transform.position;
+
+        // Usar la referencia de la mano si está asignada (posición exacta de la bola en la mano)
+        Vector3 spawnPos = (handFireballTransform != null) ? handFireballTransform.position : (transform.position + transform.forward * 1f);
+        Quaternion spawnRot = (handFireballTransform != null) ? handFireballTransform.rotation : transform.rotation;
+
+    // Dirección normalizada hacia el jugador
+    Vector3 direction = (targetPos - spawnPos).normalized;
+
+        // Instanciar el proyectil en la posición de la mano y aplicarle velocidad
+        if (fireballPrefab != null)
+        {
+            // Instanciamos orientado hacia el jugador para que la dirección esté alineada
+            GameObject proj = Instantiate(fireballPrefab, spawnPos, Quaternion.LookRotation(direction));
+
+            // Si el prefab tiene ParticleSystems hijos, hacemos que se reproduzcan (asumiendo que están correctamente configurados)
+            var childPS = proj.GetComponentsInChildren<ParticleSystem>(true);
+            foreach (var ps in childPS)
+            {
+                ps.Play();
+            }
+
+            Rigidbody rb = proj.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.useGravity = false; // por defecto evitar que caiga; si quieres arco, cambia esto en Inspector
+                rb.linearVelocity = direction * fireballSpeed;
+            }
+            else
+            {
+                Debug.LogWarning("El prefab de fireball no tiene Rigidbody. Asigna uno si quieres movimiento físico.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("fireballPrefab no asignado en Inspector.");
+        }
     }
 }
