@@ -74,7 +74,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2995892075962868711}
   - component: {fileID: 4105070566913338638}
-  - component: {fileID: 3649234272944225304}
   m_Layer: 0
   m_Name: woman-witch-halloween
   m_TagString: Untagged
@@ -218,29 +217,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0000060498714, y: -0.18001956, z: -0.05005446}
     m_Extent: {x: 0.94093823, y: 1.0746207, z: 0.36182886}
   m_DirtyAABB: 0
---- !u!136 &3649234272944225304
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 364311560669394326}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.94093823
-  m_Height: 2.1549852
-  m_Direction: 1
-  m_Center: {x: 0.0000060498714, y: 0.86159706, z: -0.029456977}
 --- !u!1 &376907693884106903
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,6 +833,9 @@ GameObject:
   - component: {fileID: 3128503442182613007}
   - component: {fileID: 9046185302512398965}
   - component: {fileID: -7781804117033506276}
+  - component: {fileID: -7753866345646800813}
+  - component: {fileID: -1632252441076018215}
+  - component: {fileID: -420780023277838688}
   m_Layer: 0
   m_Name: Woman_Witch_Halloween
   m_TagString: Bruja
@@ -874,8 +853,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2628848801047257976}
   - {fileID: 2995892075962868711}
@@ -925,6 +904,71 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-7753866345646800813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2315270095331521205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 826599b245a3c19428403542aa568baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaWomanWitch: 10
+  distanciaAlertaWomanWitch: 10
+  enemiesManager: {fileID: 0}
+--- !u!136 &-1632252441076018215
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2315270095331521205}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &-420780023277838688
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2315270095331521205}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &2327324740981842536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,12 +1504,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4022337002618121167}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.08106457, y: -0.1634214, z: -0.77359253, w: -0.606858}
-  m_LocalPosition: {x: 0.035, y: 0.069, z: 0.092}
-  m_LocalScale: {x: 0.3333334, y: 0.33333355, z: 0.33333346}
+  m_LocalRotation: {x: -0.08104556, y: 0.15455224, z: 0.67869574, w: -0.7133844}
+  m_LocalPosition: {x: 0.008, y: 0.09, z: 0.146}
+  m_LocalScale: {x: 0.33333343, y: 0.33333352, z: 0.3333334}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7181547670579123087}
+  m_Father: {fileID: 7421012841470539412}
   m_LocalEulerAnglesHint: {x: 94.711, y: 90, z: -90}
 --- !u!198 &9084114884178081349
 ParticleSystem:
@@ -6904,7 +6948,6 @@ Transform:
   - {fileID: 1126158301844825084}
   - {fileID: 6868181905795561796}
   - {fileID: 5222810814002627070}
-  - {fileID: 5451292162099807438}
   - {fileID: 5688990961011937558}
   m_Father: {fileID: 5496714172256482258}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7136,6 +7179,7 @@ Transform:
   - {fileID: 7067189524857512237}
   - {fileID: 6527781630427132016}
   - {fileID: 2238570788024629444}
+  - {fileID: 5451292162099807438}
   m_Father: {fileID: 6008384812169290099}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6968214969765916631
