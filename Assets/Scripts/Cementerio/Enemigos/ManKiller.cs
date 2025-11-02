@@ -118,6 +118,9 @@ public class ManKiller : MonoBehaviour
                 this.gameObject.GetComponent<Animator>().SetTrigger("DieManKiller");
                 //desactivamos collider para no empujar cadaver
                 this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                // Notificar a EnemiesManager que se ha destruido un enemigo
+                if (enemiesManager != null)
+                    enemiesManager.ActualizarNumeroEnemigosMuertos();
             }
 
 
@@ -130,9 +133,7 @@ public class ManKiller : MonoBehaviour
             if (SoundManager.Instance != null)
                 SoundManager.Instance.PlaySound("ManKillerMuerte");
 
-            // Notificar a EnemiesManager que se ha destruido un enemigo
-            if (enemiesManager != null)
-                enemiesManager.ActualizarNumeroEnemigosMuertos();
+            
         }
     }
 }

@@ -115,6 +115,9 @@ public class WomanWitch : MonoBehaviour
                 this.gameObject.GetComponent<Animator>().SetTrigger("DieWomanWitch");
                 //desactivamos collider para no empujar cadaver
                 this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                // Notificar a EnemiesManager que se ha destruido un enemigo
+                if (enemiesManager != null)
+                    enemiesManager.ActualizarNumeroEnemigosMuertos();
             }
 
 
@@ -127,9 +130,6 @@ public class WomanWitch : MonoBehaviour
             if (SoundManager.Instance != null)
                 SoundManager.Instance.PlaySound("ManKillerMuerte");
 
-            // Notificar a EnemiesManager que se ha destruido un enemigo
-            if (enemiesManager != null)
-                enemiesManager.ActualizarNumeroEnemigosMuertos();
         }
     }
 }
