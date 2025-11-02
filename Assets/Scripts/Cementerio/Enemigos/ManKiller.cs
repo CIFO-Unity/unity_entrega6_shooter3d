@@ -38,6 +38,16 @@ public class ManKiller : MonoBehaviour
         //instancia del jugador
         fpsController = GameObject.FindWithTag("Player");
         bloquearAtaque = false;
+
+
+
+
+            Collider colJugador = fpsController.GetComponent<Collider>();
+    Collider colEnemigo = GetComponent<Collider>();
+
+    if (colJugador != null && colEnemigo != null)
+        Physics.IgnoreCollision(colEnemigo, colJugador);
+
     }
 
     // Update is called once per frame
