@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WomanWitch : MonoBehaviour
+public class Boy_Ghost : MonoBehaviour
 {
     private GameObject fpsController;
     private bool bloquearAtaque;
@@ -10,11 +10,17 @@ public class WomanWitch : MonoBehaviour
     private bool bloquearEnemigoMuerto;
     //distancia al jugador
     private float distancia;
-    [Header("Ajustes WomanWitch")]
-    //Vida WomanWitch
-    [Range(0, 50)]
+    [Header("Ajustes Boy_Ghost")]
+    //Vida Boy_Ghost
+    [Range(0, 10)]
     [SerializeField]
-    private int vidaWomanWitch = 10;
+    private int vidaBoy_Ghost = 10;
+    //distancia para que el enemigo se active y persiga al jugador
+    [SerializeField]
+    private float distanciaAlertaBoy_Ghost = 10.0f;
+    //velocidad al andar de Boy_Ghost
+    [SerializeField]
+    private float velocidadBoy_GhostCorriendo = 3.5f;
 
     [SerializeField]
     private EnemiesManager enemiesManager; // Referencia al manager de enemigos
@@ -44,55 +50,30 @@ public class WomanWitch : MonoBehaviour
             posFPS = new Vector3(fpsController.transform.position.x, this.gameObject.transform.position.y, fpsController.transform.position.z);
             //Miramos siempre al jugador
             this.gameObject.transform.LookAt(posFPS);
+
             if (bloquearAtaque == false)
             {
-                if (distancia < 4.0f)
+                if (distancia < distanciaAlertaBoy_Ghost)
                 {
-                    ataqueAleatorio = Random.Range(0, 2);
-                    bloquearAtaque = true;
-                    //print("distancia: " + distancia);
                     //ajustamos velocidad del enemigo
-                    this.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 0.0f;
-
-                    if (ataqueAleatorio == 0)
-                    {
-                        //cambiar animacion para que entre el AttackDouble
-                        this.gameObject.GetComponent<Animator>().SetTrigger("AttackPetanquero");
-                        Invoke("DesbloquearAtaque", 2.8f);
-
-                        // Reproducir sonido
-                        if (SoundManager.Instance != null)
-                            SoundManager.Instance.PlaySound("ManKillerAtaque");
-                    }
-                    else
-                    {
-                        //cambiar animacion para que entre el Attack_ManKiller
-                        this.gameObject.GetComponent<Animator>().SetTrigger("AttackKameame");
-                        Invoke("DesbloquearAtaque", 2.5f);
-
-                        // Reproducir sonido
-                        if (SoundManager.Instance != null)
-                            SoundManager.Instance.PlaySound("ManKillerAtaque");
-                    }
-
-
+                    this.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = velocidadBoy_GhostCorriendo;
+                    //cambiar animacion para que entre el correr
+                    this.gameObject.GetComponent<Animator>().SetTrigger("RunBoyGhost");
                 }
-
             }
         }
     }
-
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Bala")
         {
 
-            vidaWomanWitch -= 1;
-            if (vidaWomanWitch <= 0)
+            vidaBoy_Ghost -= 1;
+            if (vidaBoy_Ghost <= 0)
             {
                 bloquearEnemigoMuerto = true;
                 //cambiar animacion para que entre el morir
-                this.gameObject.GetComponent<Animator>().SetTrigger("DieWomanWitch");
+                this.gameObject.GetComponent<Animator>().SetTrigger("DieBoyGhost");
                 //desactivamos collider para no empujar cadaver
                 this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 // Notificar a EnemiesManager que se ha destruido un enemigo
@@ -109,6 +90,7 @@ public class WomanWitch : MonoBehaviour
             // Reproducir sonido
             if (SoundManager.Instance != null)
                 SoundManager.Instance.PlaySound("ManKillerMuerte");
+
 
         }
     }

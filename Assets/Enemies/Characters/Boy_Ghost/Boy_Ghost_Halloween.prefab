@@ -392,7 +392,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3840303209186014068}
   - component: {fileID: 8838736403860086749}
-  - component: {fileID: 7031373248990531921}
   m_Layer: 0
   m_Name: boy-ghost-halloween
   m_TagString: Untagged
@@ -536,29 +535,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00000020861626, y: 0.094433635, z: -0.08065445}
     m_Extent: {x: 0.63937056, y: 0.9097743, z: 0.2395381}
   m_DirtyAABB: 0
---- !u!136 &7031373248990531921
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423032827678222326}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.85975987
-  m_Height: 2.4500065
-  m_Direction: 1
-  m_Center: {x: -0.00000025466784, y: 1.0808645, z: -0.09068686}
 --- !u!1 &1479845317847821002
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,6 +806,9 @@ GameObject:
   - component: {fileID: 2451325533797763712}
   - component: {fileID: 8423129063037702394}
   - component: {fileID: 7047592546918531980}
+  - component: {fileID: -4072688842006590336}
+  - component: {fileID: -3961783400617279045}
+  - component: {fileID: -6521396183856885030}
   m_Layer: 0
   m_Name: Boy_Ghost_Halloween
   m_TagString: Boy_Ghost
@@ -898,6 +877,72 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-4072688842006590336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976610219438379066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4421aa33865c965458129a24066864c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaBoy_Ghost: 1
+  distanciaAlertaBoy_Ghost: 10
+  velocidadBoy_GhostCorriendo: 3.5
+  enemiesManager: {fileID: 0}
+--- !u!54 &-3961783400617279045
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976610219438379066}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &-6521396183856885030
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976610219438379066}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3049084624483202870
 GameObject:
   m_ObjectHideFlags: 0

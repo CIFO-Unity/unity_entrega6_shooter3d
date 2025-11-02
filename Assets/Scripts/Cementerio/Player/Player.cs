@@ -61,6 +61,9 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private int danoManKillerHalloween = 1;
+
+    [SerializeField]
+    private int danoBoy_Ghost = 2;
     private int ultimoGolpe = -1; // Último sonido de golpe recibido reproducido; para evitar repetir el mismo dos veces seguidas
 
     [Header("Munición")]
@@ -482,20 +485,25 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Golpeado por ManKiller");
 
         if (other.gameObject.tag == "RightHandManKiller")
         {
-            print("Vida: " + vida);
+            // Resta vida al jugador al colisionar con Man_Killer
+            RestarVida(danoManKillerHalloween);
+        }
+
+        if (other.gameObject.tag == "LeftHandManKiller")
+        {
             // Resta vida al jugador al colisionar con Man_Killer
             RestarVida(danoManKillerHalloween);
         }
         
-        if (other.gameObject.tag == "LeftHandManKiller")
+         if (other.gameObject.tag == "Boy_Ghost")
         {
-            print("Vida: " + vida);
-            // Resta vida al jugador al colisionar con Man_Killer
-            RestarVida(danoManKillerHalloween);
+            // Resta vida al jugador al colisionar con Boy_Ghost
+            RestarVida(danoBoy_Ghost);
+            //FALTA EL SONIDO BOOOOOUUUUUMMMMMMMMMMMMMMMMMMMMMMMMMMM Y LAS PARTÍCULAS.
+            Destroy(other.gameObject);
         }
     }
 
