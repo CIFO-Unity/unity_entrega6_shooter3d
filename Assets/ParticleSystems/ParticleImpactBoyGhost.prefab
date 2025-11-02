@@ -4724,7 +4724,7 @@ GameObject:
   - component: {fileID: 19900002}
   - component: {fileID: 11400000}
   m_Layer: 0
-  m_Name: WFX_GazFireBig (No Smoke)
+  m_Name: ParticleImpactBoyGhost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -20,7 +20,7 @@ public class Boy_Ghost : MonoBehaviour
     private float distanciaAlertaBoy_Ghost = 10.0f;
     //velocidad al andar de Boy_Ghost
     [SerializeField]
-    private float velocidadBoy_GhostCorriendo = 3.5f;
+    private float velocidadBoy_GhostCorriendo = 5.0f;
 
     [SerializeField]
     private EnemiesManager enemiesManager; // Referencia al manager de enemigos

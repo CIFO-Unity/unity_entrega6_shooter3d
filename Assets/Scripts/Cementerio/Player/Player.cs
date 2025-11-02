@@ -80,6 +80,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private bool tieneLlave2 = false;
 
+    [Header("Enemigos")]
+    [SerializeField] private GameObject particleImpactBoyGhostPrefab;
 
     #region Getters & Setters
 
@@ -364,7 +366,7 @@ public class Player : MonoBehaviour
         // Llamar a la función de cargar la escena después de 7 segundos
         StartCoroutine(CargarGanarConDelay(7.0f));
     }
-    
+
     public void Morir()
     {
         // Reproducir sonido de muerte
@@ -438,7 +440,7 @@ public class Player : MonoBehaviour
             yield return null;
         }
 
-        c.a = endAlpha; 
+        c.a = endAlpha;
         img.color = c;
     }
 
@@ -481,7 +483,7 @@ public class Player : MonoBehaviour
 
     #endregion
 
-    #region Interacción Enemigos
+    #region Trigger Enemigos
 
     private void OnTriggerEnter(Collider other)
     {
@@ -497,12 +499,21 @@ public class Player : MonoBehaviour
             // Resta vida al jugador al colisionar con Man_Killer
             RestarVida(danoManKillerHalloween);
         }
-        
-         if (other.gameObject.tag == "Boy_Ghost")
+
+        if (other.gameObject.tag == "Boy_Ghost")
         {
+
             // Resta vida al jugador al colisionar con Boy_Ghost
             RestarVida(danoBoy_Ghost);
+
             //FALTA EL SONIDO BOOOOOUUUUUMMMMMMMMMMMMMMMMMMMMMMMMMMM Y LAS PARTÍCULAS.
+
+            //guardar location boy ghost
+            Vector3 pos = other.transform.position;
+            Quaternion rot = other.transform.rotation;
+            //instanciar partículas
+            if (particleImpactBoyGhostPrefab != null)
+                Instantiate(particleImpactBoyGhostPrefab, pos, rot);
             Destroy(other.gameObject);
         }
     }
