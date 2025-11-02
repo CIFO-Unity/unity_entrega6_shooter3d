@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
 using UnityEngine;
 
 public class WomanWitch : MonoBehaviour
@@ -102,6 +103,37 @@ public class WomanWitch : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other)
+    {
+        /* if (other.gameObject.tag == "Bala")
+        {
+
+            vidaWomanWitch -= 1;
+            if (vidaWomanWitch <= 0)
+            {
+                bloquearEnemigoMuerto = true;
+                //cambiar animacion para que entre el morir
+                this.gameObject.GetComponent<Animator>().SetTrigger("DieWomanWitch");
+                //desactivamos collider para no empujar cadaver
+                this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                // Notificar a EnemiesManager que se ha destruido un enemigo
+                if (enemiesManager != null)
+                    enemiesManager.ActualizarNumeroEnemigosMuertos();
+            }
+
+
+            // Llamar a DestruirBala() si la bala tiene el script correspondiente
+            Bala bala = other.gameObject.GetComponent<Bala>();
+            if (bala != null)
+                bala.DestruirBala();
+
+            // Reproducir sonido
+            if (SoundManager.Instance != null)
+                SoundManager.Instance.PlaySound("ManKillerMuerte");
+
+        } */
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Bala")
         {
