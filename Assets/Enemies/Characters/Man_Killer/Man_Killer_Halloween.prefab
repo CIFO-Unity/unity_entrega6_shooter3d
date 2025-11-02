@@ -399,6 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45042aeea37989f429c56ff487b03442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vidaManKiller: 5
   distanciaAlertaManKiller: 10
   velocidadManKillerAndando: 3.5
 --- !u!1 &457484053815812752

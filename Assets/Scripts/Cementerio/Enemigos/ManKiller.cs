@@ -13,6 +13,10 @@ public class ManKiller : MonoBehaviour
     //distancia al jugador
     private float distancia;
     [Header("Ajustes ManKiller")]
+    //Vida ManKiller
+    [Range(0, 10)]
+    [SerializeField]
+    private int vidaManKiller = 100;
     //distancia para que el enemigo se active y persiga al jugador
     [SerializeField]
     private float distanciaAlertaManKiller = 10.0f;
@@ -94,13 +98,17 @@ public class ManKiller : MonoBehaviour
     {
         if (other.gameObject.tag == "Bala")
         {
-            bloquearEnemigoMuerto = true;
-            //cambiar animacion para que entre el morir
-            this.gameObject.GetComponent<Animator>().SetTrigger("DieManKiller");
-            //desactivamos collider para no empujar cadaver
-            this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
-            //Destruimos la bala tras el impacto
-            //Destroy(other.gameObject, 0.0f);
+            vidaManKiller -= 1;
+            if(vidaManKiller<=0)
+            {
+                //bloqueamos a ManKiller para que no se reinicie tras muerte
+                bloquearEnemigoMuerto = true;
+                //cambiar animacion para que entre el morir
+                this.gameObject.GetComponent<Animator>().SetTrigger("DieManKiller");
+                //desactivamos collider para no empujar cadaver
+                this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            }
+            
         }
     }
 }
