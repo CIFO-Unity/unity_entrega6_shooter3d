@@ -16,7 +16,7 @@ public class ManKiller : MonoBehaviour
     //Vida ManKiller
     [Range(0, 10)]
     [SerializeField]
-    private int vidaManKiller = 100;
+    private int vidaManKiller = 10;
     //distancia para que el enemigo se active y persiga al jugador
     [SerializeField]
     private float distanciaAlertaManKiller = 10.0f;
@@ -109,13 +109,30 @@ public class ManKiller : MonoBehaviour
     {
         if (other.gameObject.tag == "Bala")
         {
-            bloquearEnemigoMuerto = true;
-            //cambiar animacion para que entre el morir
-            this.gameObject.GetComponent<Animator>().SetTrigger("DieManKiller");
-            //desactivamos collider para no empujar cadaver
-            this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
-            //Destruimos la bala tras el impacto
-            //Destroy(other.gameObject, 0.0f);
+
+            vidaManKiller -= 1;
+            if (vidaManKiller <= 0)
+            {
+                bloquearEnemigoMuerto = true;
+                //cambiar animacion para que entre el morir
+                this.gameObject.GetComponent<Animator>().SetTrigger("DieManKiller");
+                //desactivamos collider para no empujar cadaver
+                this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            }
+
+
+            // Llamar a DestruirBala() si la bala tiene el script correspondiente
+            Bala bala = other.gameObject.GetComponent<Bala>();
+            if (bala != null)
+                bala.DestruirBala();
+
+            // Reproducir sonido
+            if (SoundManager.Instance != null)
+                SoundManager.Instance.PlaySound("ManKillerMuerte");
+
+            // Notificar a EnemiesManager que se ha destruido un enemigo
+            if (enemiesManager != null)
+                enemiesManager.ActualizarNumeroEnemigosMuertos();
         }
     }
 }
