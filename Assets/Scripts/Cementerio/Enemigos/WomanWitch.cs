@@ -21,13 +21,15 @@ public class WomanWitch : MonoBehaviour
     [SerializeField]
     private GameObject particleImpactWomanWitchPrefab;
 
-    [Header("Fireball Settings")]
-    [Tooltip("Transform del objeto que representa la bola en la mano (usa su posición/rotación como spawn)")]
+    [Header("Fireball")]
     [SerializeField]
     private Transform handFireballTransform;
 
     [SerializeField]
     private GameObject fireballPrefab; // prefab del proyectil (debe tener Rigidbody y partículas dentro)
+
+    [SerializeField]
+    private GameObject iceballPrefab;
 
     [SerializeField]
     private float fireballSpeed = 12f;
@@ -144,14 +146,53 @@ public class WomanWitch : MonoBehaviour
         Vector3 spawnPos = (handFireballTransform != null) ? handFireballTransform.position : (transform.position + transform.forward * 1f);
         Quaternion spawnRot = (handFireballTransform != null) ? handFireballTransform.rotation : transform.rotation;
 
-    // Dirección normalizada hacia el jugador
-    Vector3 direction = (targetPos - spawnPos).normalized;
+        // Dirección normalizada hacia el jugador
+        Vector3 direction = (targetPos - spawnPos).normalized;
 
         // Instanciar el proyectil en la posición de la mano y aplicarle velocidad
         if (fireballPrefab != null)
         {
             // Instanciamos orientado hacia el jugador para que la dirección esté alineada
             GameObject proj = Instantiate(fireballPrefab, spawnPos, Quaternion.LookRotation(direction));
+
+            // Si el prefab tiene ParticleSystems hijos, hacemos que se reproduzcan (asumiendo que están correctamente configurados)
+            var childPS = proj.GetComponentsInChildren<ParticleSystem>(true);
+            foreach (var ps in childPS)
+            {
+                ps.Play();
+            }
+
+            Rigidbody rb = proj.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.useGravity = false; // por defecto evitar que caiga; si quieres arco, cambia esto en Inspector
+                rb.linearVelocity = direction * fireballSpeed;
+            }
+        }
+    }
+    
+    private void LanzamientoKameame()
+    {
+        // Posición objetivo (jugador) — preferimos la cámara del jugador si existe para apuntar al torso/ojos
+        Vector3 targetPos;
+        Camera playerCam = Camera.main;
+        if (playerCam != null)
+            targetPos = playerCam.transform.position;
+        else
+            targetPos = fpsController.transform.position;
+
+        // Usar la referencia de la mano si está asignada (posición exacta de la bola en la mano)
+        Vector3 spawnPos = (handFireballTransform != null) ? handFireballTransform.position : (transform.position + transform.forward * 1f);
+        Quaternion spawnRot = (handFireballTransform != null) ? handFireballTransform.rotation : transform.rotation;
+
+        // Dirección normalizada hacia el jugador
+        Vector3 direction = (targetPos - spawnPos).normalized;
+
+        // Instanciar el proyectil en la posición de la mano y aplicarle velocidad
+        if (iceballPrefab != null)
+        {
+            // Instanciamos orientado hacia el jugador para que la dirección esté alineada
+            GameObject proj = Instantiate(iceballPrefab, spawnPos, Quaternion.LookRotation(direction));
 
             // Si el prefab tiene ParticleSystems hijos, hacemos que se reproduzcan (asumiendo que están correctamente configurados)
             var childPS = proj.GetComponentsInChildren<ParticleSystem>(true);

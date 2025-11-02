@@ -22,6 +22,7 @@ TagManager:
   - RightHandManKiller
   - LeftHandManKiller
   - FireBall
+  - IceBall
   layers:
   - Default
   - TransparentFX

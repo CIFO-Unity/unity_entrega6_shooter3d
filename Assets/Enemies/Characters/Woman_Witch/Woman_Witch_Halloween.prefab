@@ -920,6 +920,7 @@ MonoBehaviour:
   particleImpactWomanWitchPrefab: {fileID: 100002, guid: b64f66fc349828547952276e9d0271ff, type: 3}
   handFireballTransform: {fileID: 0}
   fireballPrefab: {fileID: 3541248672663946775, guid: 79bfb38d6d1d6a949809939f02ecbeb3, type: 3}
+  iceballPrefab: {fileID: 3541248672663946775, guid: 82c0ebb8b923cec4eb5e18a69125a428, type: 3}
   fireballSpeed: 12
   enemiesManager: {fileID: 0}
 --- !u!136 &-1632252441076018215

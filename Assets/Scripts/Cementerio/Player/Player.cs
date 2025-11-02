@@ -520,11 +520,21 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if(other.gameObject.tag == "FireBall")
+        if (other.gameObject.tag == "FireBall")
         {
             print("Entra fireball");
             // Resta vida al jugador al colisionar con FireBall
             RestarVida(danoFireBall);
+            Destroy(other.gameObject);
+        }
+        
+        if(other.gameObject.tag == "IceBall")//CONGELAR AL PLAYER Y NO QUITAR VIDA!!!
+        {
+            print("Entra iceball");
+            // Congelar al jugador al colisionar con IceBall
+
+            // Por ejemplo, reducir su velocidad de DISPARO ARMA
+            //velocidadDisparo *= 0.5f; // Reducir la velocidad de disparo a la mitad
             Destroy(other.gameObject);
         }
     }
