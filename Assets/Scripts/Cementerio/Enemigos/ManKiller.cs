@@ -131,19 +131,23 @@ public class ManKiller : MonoBehaviour
                 // Notificar a EnemiesManager que se ha destruido un enemigo
                 if (enemiesManager != null)
                     enemiesManager.ActualizarNumeroEnemigosMuertos();
+
+                // Reproducir sonido
+                if (SoundManager.Instance != null)
+                    SoundManager.Instance.PlaySound("ManKillerMuerte");
+            }
+            else
+            {
+                // Reproducir sonido
+                if (SoundManager.Instance != null)
+                    SoundManager.Instance.PlaySound("RecibirGolpeEnemigo");
+   
             }
 
-
-            // Llamar a DestruirBala() si la bala tiene el script correspondiente
-            Bala bala = other.gameObject.GetComponent<Bala>();
+                // Llamar a DestruirBala() si la bala tiene el script correspondiente
+                Bala bala = other.gameObject.GetComponent<Bala>();
             if (bala != null)
-                bala.DestruirBala();
-
-            // Reproducir sonido
-            if (SoundManager.Instance != null)
-                SoundManager.Instance.PlaySound("ManKillerMuerte");
-
-            
+                bala.DestruirBala();            
         }
     }
 }

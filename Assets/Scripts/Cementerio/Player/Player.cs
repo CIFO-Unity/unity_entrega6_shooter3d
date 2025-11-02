@@ -515,7 +515,9 @@ public class Player : MonoBehaviour
             // Resta vida al jugador al colisionar con Boy_Ghost
             RestarVida(danoBoy_Ghost);
 
-            //FALTA EL SONIDO BOOOOOUUUUUMMMMMMMMMMMMMMMMMMMMMMMMMMM
+            // Reproducir sonido
+            if (SoundManager.Instance != null)
+                SoundManager.Instance.PlaySound("BoyGhostAtaque");
 
             //activamos prefab de fuego
             if (fxFire01 != null)
