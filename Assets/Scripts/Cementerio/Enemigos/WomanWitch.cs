@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class WomanWitch : MonoBehaviour
@@ -16,6 +17,11 @@ public class WomanWitch : MonoBehaviour
     [SerializeField]
     private int vidaWomanWitch = 10;
 
+    [Header("Particle Systems")]
+    [SerializeField]
+    private GameObject particleImpactWomanWitchPrefab;
+
+    [Header("Contar enemigos muertos")]
     [SerializeField]
     private EnemiesManager enemiesManager; // Referencia al manager de enemigos
 
@@ -111,5 +117,20 @@ public class WomanWitch : MonoBehaviour
                 SoundManager.Instance.PlaySound("ManKillerMuerte");
 
         }
+    }
+
+    private void LanzamientoFireBall()
+    {
+        //guardar location player
+        Vector3 posplayer = fpsController.transform.position;
+        Quaternion rotplayerplayer = fpsController.transform.rotation;
+        //guardar location woman witch
+        Vector3 pos = this.gameObject.transform.position;
+        Quaternion rot = this.gameObject.transform.rotation;
+        //instanciar partículas
+        if (particleImpactWomanWitchPrefab != null)
+            Instantiate(particleImpactWomanWitchPrefab, pos, rot);
+            //Lanzar con fuerza hacia la direccion de mirada del jugador
+            Vector3 direccionLanzamiento = (posplayer - pos).normalized;
     }
 }

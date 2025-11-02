@@ -506,7 +506,7 @@ public class Player : MonoBehaviour
             // Resta vida al jugador al colisionar con Boy_Ghost
             RestarVida(danoBoy_Ghost);
 
-            //FALTA EL SONIDO BOOOOOUUUUUMMMMMMMMMMMMMMMMMMMMMMMMMMM Y LAS PARTÍCULAS.
+            //FALTA EL SONIDO BOOOOOUUUUUMMMMMMMMMMMMMMMMMMMMMMMMMMM
 
             //guardar location boy ghost
             Vector3 pos = other.transform.position;
