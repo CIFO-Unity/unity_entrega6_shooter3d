@@ -517,12 +517,13 @@ public class Player : MonoBehaviour
 
             //FALTA EL SONIDO BOOOOOUUUUUMMMMMMMMMMMMMMMMMMMMMMMMMMM
 
-            //guardar location boy ghost
-            Vector3 pos = other.transform.position;
-            Quaternion rot = other.transform.rotation;
-            //instanciar partículas
-            if (particleImpactBoyGhostPrefab != null)
-                Instantiate(particleImpactBoyGhostPrefab, pos, rot);
+            //activamos prefab de fuego
+            if (fxFire01 != null)
+            {
+                fxFire01.SetActive(true);
+                //lo mantenemos en play solo medio segundo
+                StartCoroutine(StopFireAfter(2.5f, fxFire01));
+            }
             Destroy(other.gameObject);
         }
 
