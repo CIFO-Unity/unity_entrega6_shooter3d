@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Runtime.InteropServices;
 
 public class Player : MonoBehaviour
 {
@@ -64,6 +65,8 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private int danoBoy_Ghost = 2;
+    [SerializeField]
+    private int danoFireBall = 3;
     private int ultimoGolpe = -1; // Último sonido de golpe recibido reproducido; para evitar repetir el mismo dos veces seguidas
 
     [Header("Munición")]
@@ -514,6 +517,14 @@ public class Player : MonoBehaviour
             //instanciar partículas
             if (particleImpactBoyGhostPrefab != null)
                 Instantiate(particleImpactBoyGhostPrefab, pos, rot);
+            Destroy(other.gameObject);
+        }
+
+        if(other.gameObject.tag == "FireBall")
+        {
+            print("Entra fireball");
+            // Resta vida al jugador al colisionar con FireBall
+            RestarVida(danoFireBall);
             Destroy(other.gameObject);
         }
     }

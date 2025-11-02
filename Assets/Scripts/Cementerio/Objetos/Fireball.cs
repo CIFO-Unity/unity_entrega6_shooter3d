@@ -3,22 +3,8 @@ using UnityEngine;
 public class Fireball : MonoBehaviour
 {
     [Header("Trail")]
-    [Tooltip("Prefab del ParticleSystem que hará la estela/trail del proyectil. Asignar en el prefab Fireball si quieres que la bola lleve partículas.")]
     [SerializeField]
     private GameObject trailPrefab;
-
-    [SerializeField]
-    private float maxLifetime = 6f;
-
-    [Header("Impact")]
-    [SerializeField]
-    private GameObject impactPrefab;
-
-    [SerializeField]
-    private string impactSound = "FireballImpact";
-
-    [SerializeField]
-    private float impactLifetime = 2f;
 
     private Rigidbody rb;
 
@@ -26,7 +12,7 @@ public class Fireball : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        // Si hay un prefab de trail asignado, instanciarlo como child para que siga al proyectil
+        // Si hay un prefab de trail asignado, instanciarlo como child para que siga al proyectil (humo, fuego etc)
         if (trailPrefab != null)
         {
             GameObject trail = Instantiate(trailPrefab, transform);
@@ -49,7 +35,7 @@ public class Fireball : MonoBehaviour
         }
 
         // Seguridad: destruir tras tiempo
-        Destroy(gameObject, maxLifetime);
+        Destroy(gameObject, 3.0f);
     }
 
     private void FixedUpdate()
@@ -59,41 +45,5 @@ public class Fireball : MonoBehaviour
         {
             transform.forward = rb.linearVelocity.normalized;
         }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        // Obtener punto de contacto
-        Vector3 hitPos = transform.position;
-        Quaternion hitRot = Quaternion.identity;
-        if (collision.contactCount > 0)
-        {
-            ContactPoint contact = collision.GetContact(0);
-            hitPos = contact.point;
-            hitRot = Quaternion.LookRotation(contact.normal);
-        }
-
-        // Instanciar efecto de impacto si existe
-        if (impactPrefab != null)
-        {
-            GameObject imp = Instantiate(impactPrefab, hitPos, hitRot);
-            var ps = imp.GetComponent<ParticleSystem>();
-            if (ps != null)
-            {
-                var main = ps.main;
-                main.simulationSpace = ParticleSystemSimulationSpace.World;
-                ps.Play();
-            }
-            Destroy(imp, impactLifetime);
-        }
-
-        // Reproducir sonido de impacto si existe SoundManager
-        if (SoundManager.Instance != null && !string.IsNullOrEmpty(impactSound))
-        {
-            SoundManager.Instance.PlaySound(impactSound);
-        }
-
-        // Destruir el proyectil
-        Destroy(gameObject);
     }
 }

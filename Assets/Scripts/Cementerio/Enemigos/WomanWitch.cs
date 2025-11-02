@@ -132,16 +132,6 @@ public class WomanWitch : MonoBehaviour
 
     private void LanzamientoFireBall()
     {
-        // Asegurar referencia al jugador
-        if (fpsController == null)
-            fpsController = GameObject.FindWithTag("Player");
-
-        if (fpsController == null)
-        {
-            Debug.LogWarning("FPS Controller no encontrado. Cancelando lanzamiento de fireball.");
-            return;
-        }
-
         // Posición objetivo (jugador) — preferimos la cámara del jugador si existe para apuntar al torso/ojos
         Vector3 targetPos;
         Camera playerCam = Camera.main;
@@ -176,14 +166,6 @@ public class WomanWitch : MonoBehaviour
                 rb.useGravity = false; // por defecto evitar que caiga; si quieres arco, cambia esto en Inspector
                 rb.linearVelocity = direction * fireballSpeed;
             }
-            else
-            {
-                Debug.LogWarning("El prefab de fireball no tiene Rigidbody. Asigna uno si quieres movimiento físico.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("fireballPrefab no asignado en Inspector.");
         }
     }
 }
