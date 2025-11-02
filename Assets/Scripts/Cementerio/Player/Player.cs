@@ -86,6 +86,12 @@ public class Player : MonoBehaviour
     [Header("Enemigos")]
     [SerializeField] private GameObject particleImpactBoyGhostPrefab;
 
+    [Header("Efectos Locales")]
+    [SerializeField]
+    private GameObject fxFire01;
+    [SerializeField]
+    private GameObject fxFire01_2;
+
     #region Getters & Setters
 
     // Getter y Setter para Vida
@@ -522,21 +528,41 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.tag == "FireBall")
         {
-            print("Entra fireball");
-            // Resta vida al jugador al colisionar con FireBall
-            RestarVida(danoFireBall);
-            Destroy(other.gameObject);
-        }
-        
-        if(other.gameObject.tag == "IceBall")//CONGELAR AL PLAYER Y NO QUITAR VIDA!!!
-        {
-            print("Entra iceball");
-            // Congelar al jugador al colisionar con IceBall
+            //activamos prefab de fuego
+            if (fxFire01 != null)
+            {
+                fxFire01.SetActive(true);
+                //lo mantenemos en play solo medio segundo
+                StartCoroutine(StopFireAfter(2.0f, fxFire01));
+            }
 
-            // Por ejemplo, reducir su velocidad de DISPARO ARMA
-            //velocidadDisparo *= 0.5f; // Reducir la velocidad de disparo a la mitad
+            //RestarVida(danoFireBall);
             Destroy(other.gameObject);
         }
+
+        if (other.gameObject.tag == "IceBall")//CONGELAR AL PLAYER Y NO QUITAR VIDA!!!
+        {
+            if (fxFire01_2 != null)
+            {
+                fxFire01_2.SetActive(true);
+                //lo mantenemos en play solo medio segundo
+                StartCoroutine(StopFireAfter(2.0f, fxFire01_2));
+            }
+
+            //RestarVida(danoFireBall);
+            Destroy(other.gameObject);
+        }
+    }
+
+
+
+    private IEnumerator StopFireAfter(float time, GameObject fxFire)
+    {
+        // Espera el tiempo indicado
+        yield return new WaitForSeconds(time);
+
+        // Desactiva el GameObject
+        fxFire.SetActive(false);
     }
 
     #endregion
