@@ -82,7 +82,7 @@ public class WomanWitch : MonoBehaviour
 
                         // Reproducir sonido
                         if (SoundManager.Instance != null)
-                            SoundManager.Instance.PlaySound("ManKillerAtaque");
+                            SoundManager.Instance.PlaySound("BrujaAtaque");
                     }
                     else
                     {
@@ -92,7 +92,7 @@ public class WomanWitch : MonoBehaviour
 
                         // Reproducir sonido
                         if (SoundManager.Instance != null)
-                            SoundManager.Instance.PlaySound("ManKillerAtaque");
+                            SoundManager.Instance.PlaySound("BrujaAtaque");
                     }
 
 
@@ -104,7 +104,7 @@ public class WomanWitch : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        /* if (other.gameObject.tag == "Bala")
+        if (other.gameObject.tag == "Bala")
         {
 
             vidaWomanWitch -= 1;
@@ -115,9 +115,16 @@ public class WomanWitch : MonoBehaviour
                 this.gameObject.GetComponent<Animator>().SetTrigger("DieWomanWitch");
                 //desactivamos collider para no empujar cadaver
                 this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
-                // Notificar a EnemiesManager que se ha destruido un enemigo
-                if (enemiesManager != null)
-                    enemiesManager.ActualizarNumeroEnemigosMuertos();
+
+                // Reproducir sonido
+                if (SoundManager.Instance != null)
+                    SoundManager.Instance.PlaySound("BrujaMuerte");
+            }
+            else
+            {
+                // Reproducir sonido
+                if (SoundManager.Instance != null)
+                    SoundManager.Instance.PlaySound("RecibirGolpeEnemigo");
             }
 
 
@@ -125,12 +132,7 @@ public class WomanWitch : MonoBehaviour
             Bala bala = other.gameObject.GetComponent<Bala>();
             if (bala != null)
                 bala.DestruirBala();
-
-            // Reproducir sonido
-            if (SoundManager.Instance != null)
-                SoundManager.Instance.PlaySound("ManKillerMuerte");
-
-        } */
+        }
     }
 
     private void OnTriggerEnter(Collider other)
