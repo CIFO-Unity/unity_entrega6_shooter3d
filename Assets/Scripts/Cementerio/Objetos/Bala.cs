@@ -17,7 +17,7 @@ public class Bala : MonoBehaviour
     {
         if (other.gameObject.tag == "Escenario")
             impactoClon = (GameObject)Instantiate(impacto, this.gameObject.transform.position, Quaternion.identity);
-        else if (other.gameObject.tag == "Man_Killer")
+        else if (other.gameObject.tag == "Man_Killer" || other.gameObject.tag == "Boy_Ghost" || other.gameObject.tag == "Man_Ghost" || other.gameObject.tag == "Bruja")
             impactoClon = (GameObject)Instantiate(impactoEnemigo, this.gameObject.transform.position, Quaternion.identity);
 
         DestruirBala(); // Mejor efecto visual; de la otra manera, las balas rebotan con físicas y parece raro :P
