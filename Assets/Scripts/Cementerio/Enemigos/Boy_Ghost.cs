@@ -63,7 +63,7 @@ public class Boy_Ghost : MonoBehaviour
             }
         }
     }
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Bala")
         {

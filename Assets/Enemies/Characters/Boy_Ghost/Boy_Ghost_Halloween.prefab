@@ -865,7 +865,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -891,7 +891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaBoy_Ghost: 1
   distanciaAlertaBoy_Ghost: 10
-  velocidadBoy_GhostCorriendo: 3.5
+  velocidadBoy_GhostCorriendo: 5
   enemiesManager: {fileID: 0}
 --- !u!54 &-3961783400617279045
 Rigidbody:
@@ -939,10 +939,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.47392783
+  m_Height: 1.663071
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.88, z: -0.026072185}
 --- !u!1 &3049084624483202870
 GameObject:
   m_ObjectHideFlags: 0
