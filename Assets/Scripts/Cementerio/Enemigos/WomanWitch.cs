@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using UnityEngine;
@@ -30,6 +31,9 @@ public class WomanWitch : MonoBehaviour
     private GameObject fireballPrefab; // prefab del proyectil (debe tener Rigidbody y partículas dentro)
 
     [SerializeField]
+    private GameObject FX_Fire_06_2;
+
+    [SerializeField]
     private GameObject iceballPrefab;
 
     [SerializeField]
@@ -57,6 +61,7 @@ public class WomanWitch : MonoBehaviour
     {
         if (!bloquearEnemigoMuerto)
         {
+            /*
             //calculamos distancia entre el enemigo y el jugador
             distancia = Vector3.Distance(this.gameObject.transform.position, fpsController.transform.position);
 
@@ -98,7 +103,7 @@ public class WomanWitch : MonoBehaviour
 
                 }
 
-            }
+            }*/
         }
     }
 
@@ -142,50 +147,7 @@ public class WomanWitch : MonoBehaviour
         }
     }
 
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Bala")
-        {
-
-            vidaWomanWitch -= 1;
-            if (vidaWomanWitch <= 0)
-            {
-                bloquearEnemigoMuerto = true;
-                //cambiar animacion para que entre el morir
-                this.gameObject.GetComponent<Animator>().SetTrigger("DieWomanWitch");
-                //desactivamos collider para no empujar cadaver
-                this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
-
-                // Reproducir sonido
-                if (SoundManager.Instance != null)
-                    SoundManager.Instance.PlaySound("BrujaMuerte");
-
-                // Notificar al Player que ha ganado
-                if (fpsController != null)
-                {
-                    Player playerScript = fpsController.GetComponent<Player>();
-                    if (playerScript != null)
-                    {
-                        playerScript.Ganar();
-                    }
-                }
-            }
-            else
-            {
-                // Reproducir sonido
-                if (SoundManager.Instance != null)
-                    SoundManager.Instance.PlaySound("RecibirGolpeEnemigo");
-            }
-
-
-            // Llamar a DestruirBala() si la bala tiene el script correspondiente
-            Bala bala = other.gameObject.GetComponent<Bala>();
-            if (bala != null)
-                bala.DestruirBala();
-        }
-    }*/
-
-    private void LanzamientoFireBall()
+    private void LanzamientoFireBall()//evento animacion
     {
         // Posición objetivo (jugador) — preferimos la cámara del jugador si existe para apuntar al torso/ojos
         Vector3 targetPos;
@@ -224,7 +186,7 @@ public class WomanWitch : MonoBehaviour
         }
     }
 
-    private void LanzamientoKameame()
+    private void LanzamientoKameame()//evento animacion
     {
         // Posición objetivo (jugador) — preferimos la cámara del jugador si existe para apuntar al torso/ojos
         Vector3 targetPos;
@@ -244,6 +206,10 @@ public class WomanWitch : MonoBehaviour
         // Instanciar el proyectil en la posición de la mano y aplicarle velocidad
         if (iceballPrefab != null)
         {
+
+            FX_Fire_06_2.SetActive(true);
+            //lo mantenemos en play tiempo
+            StartCoroutine(StopFireAfter(1.5f, FX_Fire_06_2));
             // Instanciamos orientado hacia el jugador para que la dirección esté alineada
             GameObject proj = Instantiate(iceballPrefab, spawnPos, Quaternion.LookRotation(direction));
 
@@ -263,12 +229,57 @@ public class WomanWitch : MonoBehaviour
         }
     }
 
+    private IEnumerator StopFireAfter(float time, GameObject fxFire)
+    {
+        // Espera el tiempo indicado
+        yield return new WaitForSeconds(time);
+
+        // Desactiva el GameObject
+        fxFire.SetActive(false);
+    }
+
+    private bool brujaActiva = false; // evita lanzar múltiples coroutines
+
+    // Llamar desde otro script para iniciar el comportamiento de ataque repetido
     public void ActivarBruja()
     {
-        // Lógica para activar la bruja
+        if (!brujaActiva)
+        {
+            brujaActiva = true;
+            StartCoroutine(SeleccionarAtaques());
+        }
+    }
 
-        // Cuando el Player entra al ring de la bruja, ésta debe activarse y empezar a atacarle
-        print("Bruja activada");
+    // Coroutine que selecciona un ataque cada X segundos mientras la bruja esté viva
+    private System.Collections.IEnumerator SeleccionarAtaques()
+    {
+        while (vidaWomanWitch > 0)
+        {
+            // Seleccionar ataque aleatorio (0,1,2)
+            int ataqueSeleccionado = Random.Range(0, 3);
+
+            switch (ataqueSeleccionado)
+            {
+                case 0:
+                    this.gameObject.GetComponent<Animator>().SetTrigger("AttackPetanquero");
+                    // Reproducir sonido de ataque (si existe)
+                    if (SoundManager.Instance != null) SoundManager.Instance.PlaySound("BrujaAtaque");
+                    break;
+                case 1:
+                    this.gameObject.GetComponent<Animator>().SetTrigger("AttackKameame");
+                    if (SoundManager.Instance != null) SoundManager.Instance.PlaySound("BrujaAtaque");
+                    break;
+                case 2:
+                    // Aquí podrías llamar a un método que haga el ataque de rayo
+                    // por ejemplo: ActivarRayo();
+                    break;
+            }
+
+            // Espera no bloqueante entre ataques
+            yield return new WaitForSeconds(3f);
+        }
+
+        brujaActiva = false;
     }
 
 }

@@ -9388,9 +9388,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 379608012}
     m_Modifications:
+    - target: {fileID: 662573672150782873, guid: c23f25962d63d0742b95fe5d2122caa1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 665567366521411734, guid: c23f25962d63d0742b95fe5d2122caa1, type: 3}
+      propertyPath: m_Size.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 665567366521411734, guid: c23f25962d63d0742b95fe5d2122caa1, type: 3}
+      propertyPath: m_Size.y
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 665567366521411734, guid: c23f25962d63d0742b95fe5d2122caa1, type: 3}
+      propertyPath: m_Size.z
+      value: 0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 665567366521411734, guid: c23f25962d63d0742b95fe5d2122caa1, type: 3}
+      propertyPath: m_Center.x
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 665567366521411734, guid: c23f25962d63d0742b95fe5d2122caa1, type: 3}
+      propertyPath: m_Center.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 665567366521411734, guid: c23f25962d63d0742b95fe5d2122caa1, type: 3}
+      propertyPath: m_Center.z
+      value: 7.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977027836151843364, guid: c23f25962d63d0742b95fe5d2122caa1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2315270095331521205, guid: c23f25962d63d0742b95fe5d2122caa1, type: 3}
       propertyPath: m_Name
       value: Woman_Witch_Halloween
+      objectReference: {fileID: 0}
+    - target: {fileID: 2887741003519986230, guid: c23f25962d63d0742b95fe5d2122caa1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3128503442182613007, guid: c23f25962d63d0742b95fe5d2122caa1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9430,6 +9466,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3128503442182613007, guid: c23f25962d63d0742b95fe5d2122caa1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140869614441875848, guid: c23f25962d63d0742b95fe5d2122caa1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674705322030438600, guid: c23f25962d63d0742b95fe5d2122caa1, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -15894,15 +15938,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 87.07
+      value: 120.22
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.01
+      value: 4.52
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -67.52
+      value: 51.08
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalRotation.w
