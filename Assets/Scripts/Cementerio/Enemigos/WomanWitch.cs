@@ -258,7 +258,7 @@ public class WomanWitch : MonoBehaviour
         while (vidaWomanWitch > 0)
         {
             // Seleccionar ataque aleatorio (0,1,2)
-            int ataqueSeleccionado = Random.Range(0, 3);
+            int ataqueSeleccionado = Random.Range(0, 2);
 
             switch (ataqueSeleccionado)
             {
@@ -278,7 +278,7 @@ public class WomanWitch : MonoBehaviour
             }
 
             // Espera no bloqueante entre ataques
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2.5f);
         }
 
         brujaActiva = false;
