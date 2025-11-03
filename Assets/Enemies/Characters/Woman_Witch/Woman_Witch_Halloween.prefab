@@ -838,7 +838,6 @@ GameObject:
   - component: {fileID: -7753866345646800813}
   - component: {fileID: -1632252441076018215}
   - component: {fileID: -420780023277838688}
-  - component: {fileID: 3003637854191500321}
   m_Layer: 0
   m_Name: Woman_Witch_Halloween
   m_TagString: Bruja
@@ -977,21 +976,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &3003637854191500321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2315270095331521205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6ce29c688427a24487cf396d86520f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  interval: 1
-  glowEffectPrefab: {fileID: 2681962253317326757, guid: d764731c0f0c28c4f90db6729213aa74, type: 3}
 --- !u!1 &2327324740981842536
 GameObject:
   m_ObjectHideFlags: 0

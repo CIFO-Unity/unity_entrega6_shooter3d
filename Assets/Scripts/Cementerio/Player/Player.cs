@@ -524,22 +524,13 @@ public class Player : MonoBehaviour
             if (fxFire01 != null)
             {
                 fxFire01.SetActive(true);
-                // Buscar el objeto FX_Fire_04 (llama boyghost) dentro de los hijos
-                Transform hijo = transform.Find("boy-ghost-halloween/FX_Fire_04");
-                if (hijo != null)
-                {
-                    hijo.gameObject.SetActive(false);
-                    Debug.Log("🔥 FX_Fire_04 desactivado correctamente");
-                }
-                else
-                {
-                    Debug.LogWarning("⚠ No se encontró el hijo FX_Fire_04");
-                }
-                
+                //lo mantenemos en play un segundo
+                //explosionEffect.SetActive(true);
+                //StartCoroutine(StopFireAfter(1f, explosionEffect));
                 StartCoroutine(StopFireAfter(1f, fxFire01));
             }
 
-
+            
 
             // Notificar a EnemiesManager que se ha destruido un enemigo
             if (enemiesManager != null)

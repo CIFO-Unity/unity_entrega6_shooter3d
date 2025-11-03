@@ -39,6 +39,17 @@ public class Boy_Ghost : MonoBehaviour
         //instancia del jugador
         fpsController = GameObject.FindWithTag("Player");
         bloquearAtaque = false;
+
+        Transform target = FindDeepChild(transform, "FX_Fire_04");
+        if (target != null)
+        {
+            Debug.Log("🔥 Encontrado FX_Fire_04 en Start — destruyéndolo.");
+            Destroy(target.gameObject);
+        }
+        else
+        {
+            Debug.LogWarning("⚠ No se encontró FX_Fire_04 en Start.");
+        }
     }
 
     // Update is called once per frame
@@ -95,17 +106,30 @@ public class Boy_Ghost : MonoBehaviour
                 SoundManager.Instance.PlaySound("RecibirGolpeEnemigo");
         }
 
-        if (other.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             // Instanciar explosión
             if (explosionPrefab != null)
             {
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            }           
+            }
 
-            // Destruir enemigo tras 0.1 segundos
-            Destroy(this.gameObject, 0.1f);
+/*             // Buscar recursivamente y destruir el hijo llamado "FX_Fire_04"
+            Transform target = FindDeepChild(transform, "FX_Fire_04");
+            if (target != null)
+            {
+                Debug.Log("🔥 Encontrado FX_Fire_04 — destruyéndolo.");
+                Destroy(target.gameObject);
+            }
+            else
+            {
+                Debug.LogWarning("⚠ No se encontró FX_Fire_04 en los hijos del enemigo.");
+            } */
+
+            // Destruir enemigo tras corto delay (si quieres ver logs/efecto)
+            Destroy(this.gameObject, 0.5f);
         }
-
     }
+
+
 }
