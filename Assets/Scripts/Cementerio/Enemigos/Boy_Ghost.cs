@@ -104,7 +104,7 @@ public class Boy_Ghost : MonoBehaviour
             }
 
             // Destruir enemigo
-            Destroy(gameObject, 1f);
+            Destroy(this.gameObject, 0.1f);
         }
     }
 }
