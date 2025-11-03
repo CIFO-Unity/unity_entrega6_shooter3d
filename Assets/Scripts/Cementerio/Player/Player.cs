@@ -348,38 +348,24 @@ public class Player : MonoBehaviour
 
     public void Ganar()
     {
-        // Reproducir sonido de victoria
-        if (SoundManager.Instance != null)
-            SoundManager.Instance.PlaySound("Victoria");
-
+        // 1️⃣ Detener el cronómetro y guardar tiempo
         if (cronometro != null)
         {
-            // Detiene el cronómetro
             cronometro.DetenerCronometro();
-
-            // Guarda en disco el tiempo actual
             cronometro.GuardarTiempoActual();
 
-            // Actualizar el tiempo en pantalla
             AnadirTiempoActual(cronometro.GetMinutos(), cronometro.GetSeconds());
         }
 
-        // Actualizar el tiempo en pantalla
+        // 2️⃣ Mostrar mejor tiempo en pantalla
         if (recordTiempo != null)
             AnadirMejorTiempo(recordTiempo.Minutos, recordTiempo.Segundos);
 
-        // Ralentizar el juego
+        // 3️⃣ Ralentizar el juego
         Time.timeScale = 0.3f; // 30% de velocidad
 
-        // Mostrar el panel oscuro
-        if (panelVictoria != null)
-        {
-            panelVictoria.gameObject.SetActive(true);
-            StartCoroutine(FadeNegro(panelVictoria, 0f, 1.0f, 2.0f));
-        }
-
-        // Llamar a la función de cargar la escena después de 7 segundos
-        StartCoroutine(CargarGanarConDelay(7.0f));
+        // 4️⃣ Esperar 5 segundos reales y mostrar victoria
+        StartCoroutine(SecuenciaVictoria());
     }
 
     public void Morir()
@@ -406,20 +392,29 @@ public class Player : MonoBehaviour
         StartCoroutine(CargarDerrotaConDelay(4.0f));
     }
 
-    private IEnumerator CargarGanarConDelay(float segundosReales)
+    private IEnumerator SecuenciaVictoria()
     {
-        // Espera usando tiempo real, sin verse afectado por Time.timeScale
-        yield return new WaitForSecondsRealtime(segundosReales);
+        // Esperar 5 segundos reales
+        yield return new WaitForSecondsRealtime(7.0f);
 
-        // Restaurar la velocidad normal antes de cambiar de escena
+        // Reproducir sonido de victoria
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.PlaySound("Victoria");
+
+        // Mostrar el panel de victoria con fade
+        if (panelVictoria != null)
+        {
+            panelVictoria.gameObject.SetActive(true);
+            StartCoroutine(FadeNegro(panelVictoria.GetComponent<UnityEngine.UI.Image>(), 0f, 1f, 2f));
+        }
+
+        // Esperar 7 segundos más para dar tiempo al fade y sonido
+        yield return new WaitForSecondsRealtime(7.0f);
+
+        // Restaurar velocidad normal
         Time.timeScale = 1f;
 
-        // Cargar la escena de Derrota
-        CargarEscenaGanar();
-    }
-
-    private void CargarEscenaGanar()
-    {
+        // Cargar escena de victoria
         SceneManager.LoadScene("Ganar");
     }
 
