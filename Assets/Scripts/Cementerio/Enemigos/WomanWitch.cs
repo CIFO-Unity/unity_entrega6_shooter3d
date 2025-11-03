@@ -108,7 +108,7 @@ public class WomanWitch : MonoBehaviour
         {
 
             vidaWomanWitch -= 1;
-            if (vidaWomanWitch <= 0)
+            if (vidaWomanWitch <= 0 && !bloquearEnemigoMuerto)
             {
                 bloquearEnemigoMuerto = true;
                 //cambiar animacion para que entre el morir
@@ -145,7 +145,7 @@ public class WomanWitch : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Bala")
         {
@@ -186,7 +186,7 @@ public class WomanWitch : MonoBehaviour
             if (bala != null)
                 bala.DestruirBala();
         }
-    }
+    }*/
 
     private void LanzamientoFireBall()
     {
