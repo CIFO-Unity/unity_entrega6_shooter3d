@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
     private bool tieneLlave2 = false;
 
     [Header("Enemigos")]
-    [SerializeField] 
+    [SerializeField]
     private GameObject particleImpactBoyGhostPrefab;
     [SerializeField]
     private EnemiesManager enemiesManager;
@@ -94,6 +94,9 @@ public class Player : MonoBehaviour
     private GameObject fxFire01;
     [SerializeField]
     private GameObject fxFire01_2;
+
+    //[SerializeField]
+    //private GameObject explosionEffect; //Boy_Ghost
 
     #region Getters & Setters
 
@@ -527,10 +530,12 @@ public class Player : MonoBehaviour
             {
                 fxFire01.SetActive(true);
                 //lo mantenemos en play un segundo
+                //explosionEffect.SetActive(true);
+                //StartCoroutine(StopFireAfter(1f, explosionEffect));
                 StartCoroutine(StopFireAfter(1f, fxFire01));
             }
+
             
-            Destroy(other.gameObject);
 
             // Notificar a EnemiesManager que se ha destruido un enemigo
             if (enemiesManager != null)

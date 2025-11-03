@@ -23,7 +23,7 @@ public class Boy_Ghost : MonoBehaviour
     private float velocidadBoy_GhostCorriendo = 5.0f;
 
     [SerializeField]
-    private GameObject explosionEffect;
+    private GameObject explosionPrefab;
 
     [SerializeField]
     private EnemiesManager enemiesManager; // Referencia al manager de enemigos
@@ -95,9 +95,16 @@ public class Boy_Ghost : MonoBehaviour
                 SoundManager.Instance.PlaySound("RecibirGolpeEnemigo");
         }
 
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
+        {
+             // Instanciar explosión en la posición actual del enemigo
+            if (explosionPrefab != null)
             {
-                explosionEffect.SetActive(true);
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             }
+
+            // Destruir enemigo
+            Destroy(gameObject, 1f);
+        }
     }
 }
