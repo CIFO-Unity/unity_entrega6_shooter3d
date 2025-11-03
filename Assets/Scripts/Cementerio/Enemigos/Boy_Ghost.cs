@@ -115,27 +115,15 @@ public class Boy_Ghost : MonoBehaviour
 
     private Transform FindDeepChild(Transform parent, string name)
     {
-        if (parent == null)
-        {
-            Debug.LogError("❌ FindDeepChild: el parámetro 'parent' es nulo.");
-            return null;
-        }
-
-        Debug.Log($"🧩 Buscando recursivamente el hijo '{name}' en {parent.name}");
 
         foreach (Transform t in parent.GetComponentsInChildren<Transform>(true))
         {
-            Debug.Log($"➡ Hijo encontrado: {t.name}");
             if (t.name == name)
             {
                 Debug.Log("✅ Coincidencia encontrada.");
                 return t;
             }
         }
-
-        Debug.LogWarning($"⚠ No se encontró el hijo '{name}' en {parent.name}");
         return null;
     }
-
-
 }
