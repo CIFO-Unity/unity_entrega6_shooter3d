@@ -28,6 +28,7 @@ public class Boy_Ghost : MonoBehaviour
     [SerializeField]
     private EnemiesManager enemiesManager; // Referencia al manager de enemigos
 
+    private Transform fireFX;
     private void DesbloquearAtaque()
     {
         bloquearAtaque = false;
@@ -39,17 +40,7 @@ public class Boy_Ghost : MonoBehaviour
         //instancia del jugador
         fpsController = GameObject.FindWithTag("Player");
         bloquearAtaque = false;
-
-        Transform target = FindDeepChild(transform, "FX_Fire_04");
-        if (target != null)
-        {
-            Debug.Log("🔥 Encontrado FX_Fire_04 en Start — destruyéndolo.");
-            Destroy(target.gameObject);
-        }
-        else
-        {
-            Debug.LogWarning("⚠ No se encontró FX_Fire_04 en Start.");
-        }
+        fireFX = FindDeepChild(transform, "FX_Fire_04");
     }
 
     // Update is called once per frame
@@ -85,6 +76,7 @@ public class Boy_Ghost : MonoBehaviour
             vidaBoy_Ghost -= 1;
             if (vidaBoy_Ghost <= 0)
             {
+                Destroy(fireFX.gameObject);
                 bloquearEnemigoMuerto = true;
                 //cambiar animacion para que entre el morir
                 this.gameObject.GetComponent<Animator>().SetTrigger("DieBoyGhost");
@@ -104,6 +96,8 @@ public class Boy_Ghost : MonoBehaviour
             // Reproducir sonido
             if (SoundManager.Instance != null)
                 SoundManager.Instance.PlaySound("RecibirGolpeEnemigo");
+
+            
         }
 
         if (other.CompareTag("Player"))
@@ -114,21 +108,33 @@ public class Boy_Ghost : MonoBehaviour
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             }
 
-/*             // Buscar recursivamente y destruir el hijo llamado "FX_Fire_04"
-            Transform target = FindDeepChild(transform, "FX_Fire_04");
-            if (target != null)
-            {
-                Debug.Log("🔥 Encontrado FX_Fire_04 — destruyéndolo.");
-                Destroy(target.gameObject);
-            }
-            else
-            {
-                Debug.LogWarning("⚠ No se encontró FX_Fire_04 en los hijos del enemigo.");
-            } */
-
             // Destruir enemigo tras corto delay (si quieres ver logs/efecto)
             Destroy(this.gameObject, 0.5f);
         }
+    }
+
+    private Transform FindDeepChild(Transform parent, string name)
+    {
+        if (parent == null)
+        {
+            Debug.LogError("❌ FindDeepChild: el parámetro 'parent' es nulo.");
+            return null;
+        }
+
+        Debug.Log($"🧩 Buscando recursivamente el hijo '{name}' en {parent.name}");
+
+        foreach (Transform t in parent.GetComponentsInChildren<Transform>(true))
+        {
+            Debug.Log($"➡ Hijo encontrado: {t.name}");
+            if (t.name == name)
+            {
+                Debug.Log("✅ Coincidencia encontrada.");
+                return t;
+            }
+        }
+
+        Debug.LogWarning($"⚠ No se encontró el hijo '{name}' en {parent.name}");
+        return null;
     }
 
 
