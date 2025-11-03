@@ -226,7 +226,7 @@ public class WomanWitch : MonoBehaviour
             }
         }
     }
-    
+
     private void LanzamientoKameame()
     {
         // Posición objetivo (jugador) — preferimos la cámara del jugador si existe para apuntar al torso/ojos
@@ -265,4 +265,13 @@ public class WomanWitch : MonoBehaviour
             }
         }
     }
+
+    public void ActivarBruja()
+    {
+        // Lógica para activar la bruja
+
+        // Cuando el Player entra al ring de la bruja, ésta debe activarse y empezar a atacarle
+        print("Bruja activada");
+    }
+
 }

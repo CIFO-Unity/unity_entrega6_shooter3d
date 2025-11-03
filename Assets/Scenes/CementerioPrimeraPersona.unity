@@ -2997,6 +2997,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2124827229904174606, guid: 0604ce9b58da7114aa77bfa1ef820aea, type: 3}
   m_PrefabInstance: {fileID: 360755965}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &378593944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2315270095331521205, guid: c23f25962d63d0742b95fe5d2122caa1, type: 3}
+  m_PrefabInstance: {fileID: 999388815}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &379608011
 GameObject:
   m_ObjectHideFlags: 0
@@ -6639,6 +6644,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriggerBruja
       objectReference: {fileID: 0}
+    - target: {fileID: 3610808024922567596, guid: d77f6e6300aab417bba4e9f322dd9d48, type: 3}
+      propertyPath: bruja
+      value: 
+      objectReference: {fileID: 378593944}
     - target: {fileID: 3610808024922567596, guid: d77f6e6300aab417bba4e9f322dd9d48, type: 3}
       propertyPath: panelCronometro
       value: 
