@@ -84,7 +84,10 @@ public class Player : MonoBehaviour
     private bool tieneLlave2 = false;
 
     [Header("Enemigos")]
-    [SerializeField] private GameObject particleImpactBoyGhostPrefab;
+    [SerializeField] 
+    private GameObject particleImpactBoyGhostPrefab;
+    [SerializeField]
+    private EnemiesManager enemiesManager;
 
     [Header("Efectos Locales")]
     [SerializeField]
@@ -527,6 +530,10 @@ public class Player : MonoBehaviour
                 StartCoroutine(StopFireAfter(2.5f, fxFire01));
             }
             Destroy(other.gameObject);
+
+            // Notificar a EnemiesManager que se ha destruido un enemigo
+            if (enemiesManager != null)
+                enemiesManager.ActualizarNumeroEnemigosMuertos();
         }
 
         if (other.gameObject.tag == "FireBall")
