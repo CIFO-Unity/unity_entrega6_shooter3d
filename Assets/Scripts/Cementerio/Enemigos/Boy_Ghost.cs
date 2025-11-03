@@ -97,14 +97,15 @@ public class Boy_Ghost : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
-             // Instanciar explosión en la posición actual del enemigo
+            // Instanciar explosión
             if (explosionPrefab != null)
             {
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            }
+            }           
 
-            // Destruir enemigo
+            // Destruir enemigo tras 0.1 segundos
             Destroy(this.gameObject, 0.1f);
         }
+
     }
 }
