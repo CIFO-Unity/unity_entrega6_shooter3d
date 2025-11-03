@@ -61,14 +61,16 @@ public class WomanWitch : MonoBehaviour
     {
         if (!bloquearEnemigoMuerto)
         {
-            /*
-            //calculamos distancia entre el enemigo y el jugador
-            distancia = Vector3.Distance(this.gameObject.transform.position, fpsController.transform.position);
 
             //posicion del jugador pero con la y del enemigo para que no se incline al mirar
             posFPS = new Vector3(fpsController.transform.position.x, this.gameObject.transform.position.y, fpsController.transform.position.z);
             //Miramos siempre al jugador
             this.gameObject.transform.LookAt(posFPS);
+            /*
+            //calculamos distancia entre el enemigo y el jugador
+            distancia = Vector3.Distance(this.gameObject.transform.position, fpsController.transform.position);
+
+
             if (bloquearAtaque == false)
             {
                 if (distancia < 4.0f)
