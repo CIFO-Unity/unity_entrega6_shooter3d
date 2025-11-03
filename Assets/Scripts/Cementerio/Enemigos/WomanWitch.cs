@@ -66,46 +66,6 @@ public class WomanWitch : MonoBehaviour
             posFPS = new Vector3(fpsController.transform.position.x, this.gameObject.transform.position.y, fpsController.transform.position.z);
             //Miramos siempre al jugador
             this.gameObject.transform.LookAt(posFPS);
-            /*
-            //calculamos distancia entre el enemigo y el jugador
-            distancia = Vector3.Distance(this.gameObject.transform.position, fpsController.transform.position);
-
-
-            if (bloquearAtaque == false)
-            {
-                if (distancia < 4.0f)
-                {
-                    ataqueAleatorio = Random.Range(0, 2);
-                    bloquearAtaque = true;
-                    //print("distancia: " + distancia);
-                    //ajustamos velocidad del enemigo
-                    this.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 0.0f;
-
-                    if (ataqueAleatorio == 0)
-                    {
-                        //cambiar animacion para que entre el AttackDouble
-                        this.gameObject.GetComponent<Animator>().SetTrigger("AttackPetanquero");
-                        Invoke("DesbloquearAtaque", 2.8f);
-
-                        // Reproducir sonido
-                        if (SoundManager.Instance != null)
-                            SoundManager.Instance.PlaySound("BrujaAtaque");
-                    }
-                    else
-                    {
-                        //cambiar animacion para que entre el Attack_ManKiller
-                        this.gameObject.GetComponent<Animator>().SetTrigger("AttackKameame");
-                        Invoke("DesbloquearAtaque", 2.5f);
-
-                        // Reproducir sonido
-                        if (SoundManager.Instance != null)
-                            SoundManager.Instance.PlaySound("BrujaAtaque");
-                    }
-
-
-                }
-
-            }*/
         }
     }
 

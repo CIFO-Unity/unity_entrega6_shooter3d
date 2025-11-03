@@ -525,8 +525,6 @@ public class Player : MonoBehaviour
             {
                 fxFire01.SetActive(true);
                 //lo mantenemos en play un segundo
-                //explosionEffect.SetActive(true);
-                //StartCoroutine(StopFireAfter(1f, explosionEffect));
                 StartCoroutine(StopFireAfter(1f, fxFire01));
             }
 
@@ -551,7 +549,7 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if (other.gameObject.tag == "IceBall")//CONGELAR AL PLAYER Y NO QUITAR VIDA!!!
+        if (other.gameObject.tag == "IceBall")
         {
             if (fxFire01_2 != null)
             {
