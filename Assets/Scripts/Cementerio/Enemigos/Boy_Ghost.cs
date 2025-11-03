@@ -90,8 +90,6 @@ public class Boy_Ghost : MonoBehaviour
             // Reproducir sonido
             if (SoundManager.Instance != null)
                 SoundManager.Instance.PlaySound("RecibirGolpeEnemigo");
-
-
         }
     }
 }
