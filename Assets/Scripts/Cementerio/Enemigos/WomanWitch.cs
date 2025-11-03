@@ -161,7 +161,7 @@ public class WomanWitch : MonoBehaviour
 
         // Usar la referencia de la mano si está asignada (posición exacta de la bola en la mano)
         Vector3 spawnPos = (handFireballTransform != null) ? handFireballTransform.position : (transform.position + transform.forward * 1f);
-        Quaternion spawnRot = (handFireballTransform != null) ? handFireballTransform.rotation : transform.rotation;
+        //Quaternion spawnRot = (handFireballTransform != null) ? handFireballTransform.rotation : transform.rotation;
 
         // Dirección normalizada hacia el jugador
         Vector3 direction = (targetPos - spawnPos).normalized;
