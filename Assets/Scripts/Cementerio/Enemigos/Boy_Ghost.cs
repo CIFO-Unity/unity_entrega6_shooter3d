@@ -120,7 +120,7 @@ public class Boy_Ghost : MonoBehaviour
         {
             if (t.name == name)
             {
-                Debug.Log("✅ Coincidencia encontrada.");
+                //Debug.Log("✅ Coincidencia encontrada.");
                 return t;
             }
         }
