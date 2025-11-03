@@ -1519,9 +1519,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1930160465}
     m_Modifications:
+    - target: {fileID: 625736499814453584, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
+      propertyPath: municionAnadida
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7370043300670028658, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_Name
-      value: Municion
+      value: Municion1
       objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2645,7 +2649,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 679864369103879499, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
       propertyPath: m_Name
-      value: Vida (2)
+      value: Vida3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344446813584886517, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
+      propertyPath: vidaAnadida
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2727,9 +2735,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1930160465}
     m_Modifications:
+    - target: {fileID: 625736499814453584, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
+      propertyPath: municionAnadida
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7370043300670028658, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_Name
-      value: Municion (1)
+      value: Municion2
       objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3873,21 +3885,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1930160465}
     m_Modifications:
+    - target: {fileID: 625736499814453584, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
+      propertyPath: municionAnadida
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7370043300670028658, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_Name
-      value: Municion (5)
+      value: Municion6
       objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -311.88
+      value: -375.86
       objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.54
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 40.8
+      value: 80.69
       objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8175,7 +8191,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 679864369103879499, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
       propertyPath: m_Name
-      value: Vida (3)
+      value: Vida4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344446813584886517, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
+      propertyPath: vidaAnadida
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8563,15 +8583,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 154404032370305009, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -313.3
+      value: -361.85
       objectReference: {fileID: 0}
     - target: {fileID: 154404032370305009, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.74
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 154404032370305009, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 106.2
+      value: 70.5
       objectReference: {fileID: 0}
     - target: {fileID: 154404032370305009, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8603,7 +8623,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 679864369103879499, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
       propertyPath: m_Name
-      value: Vida (5)
+      value: Vida6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344446813584886517, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
+      propertyPath: vidaAnadida
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9721,9 +9745,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1930160465}
     m_Modifications:
+    - target: {fileID: 625736499814453584, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
+      propertyPath: municionAnadida
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7370043300670028658, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_Name
-      value: Municion (4)
+      value: Municion5
       objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9825,7 +9853,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 679864369103879499, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
       propertyPath: m_Name
-      value: Vida (1)
+      value: Vida2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344446813584886517, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
+      propertyPath: vidaAnadida
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10696,21 +10728,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1930160465}
     m_Modifications:
+    - target: {fileID: 625736499814453584, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
+      propertyPath: municionAnadida
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7370043300670028658, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_Name
-      value: Municion (6)
+      value: Municion7
       objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -304
+      value: -361.19
       objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.54
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 43.5
+      value: 103.49
       objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10952,7 +10988,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 679864369103879499, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
       propertyPath: m_Name
-      value: Vida (4)
+      value: Vida5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344446813584886517, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
+      propertyPath: vidaAnadida
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11930,15 +11970,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 154404032370305009, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -313.3
+      value: -373.4
       objectReference: {fileID: 0}
     - target: {fileID: 154404032370305009, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.74
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 154404032370305009, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 96.7
+      value: 98.47
       objectReference: {fileID: 0}
     - target: {fileID: 154404032370305009, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11970,7 +12010,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 679864369103879499, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
       propertyPath: m_Name
-      value: Vida (6)
+      value: Vida7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344446813584886517, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
+      propertyPath: vidaAnadida
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15818,31 +15862,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 117.87
+      value: 87.07
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.72
+      value: -2.01
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 45.66
+      value: -67.52
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6906291
+      value: 0.95655954
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.72320914
+      value: 0.29153705
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15850,7 +15894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -92.64
+      value: 33.9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -15865,9 +15909,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5750473902355325517, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
+      propertyPath: vida
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750473902355325517, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: fxFire01
       value: 
       objectReference: {fileID: 1868363074}
+    - target: {fileID: 5750473902355325517, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
+      propertyPath: municion
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 5750473902355325517, guid: dec3690c2e4ea4adea5e5236bf7a4acd, type: 3}
       propertyPath: cronometro
       value: 
@@ -16286,9 +16338,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1930160465}
     m_Modifications:
+    - target: {fileID: 625736499814453584, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
+      propertyPath: municionAnadida
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7370043300670028658, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_Name
-      value: Municion (2)
+      value: Municion3
       objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16695,7 +16751,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 679864369103879499, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
       propertyPath: m_Name
-      value: Vida
+      value: Vida1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344446813584886517, guid: 645ebf34ca97e498c855f8bc3545de88, type: 3}
+      propertyPath: vidaAnadida
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17299,9 +17359,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1930160465}
     m_Modifications:
+    - target: {fileID: 625736499814453584, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
+      propertyPath: municionAnadida
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7370043300670028658, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_Name
-      value: Municion (3)
+      value: Municion4
       objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: b5dd2144835b5432ea034f5c40c635fd, type: 3}
       propertyPath: m_LocalPosition.x
