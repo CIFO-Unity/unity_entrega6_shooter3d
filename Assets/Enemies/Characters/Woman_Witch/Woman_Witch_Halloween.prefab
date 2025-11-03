@@ -838,13 +838,7 @@ GameObject:
   - component: {fileID: -7753866345646800813}
   - component: {fileID: -1632252441076018215}
   - component: {fileID: -420780023277838688}
-  - component: {fileID: 1977027836151843364}
-  - component: {fileID: 8674705322030438600}
-  - component: {fileID: 5140869614441875848}
-  - component: {fileID: 2887741003519986230}
-  - component: {fileID: 662573672150782873}
   - component: {fileID: 3003637854191500321}
-  - component: {fileID: 665567366521411734}
   m_Layer: 0
   m_Name: Woman_Witch_Halloween
   m_TagString: Bruja
@@ -929,6 +923,7 @@ MonoBehaviour:
   particleImpactWomanWitchPrefab: {fileID: 100002, guid: b64f66fc349828547952276e9d0271ff, type: 3}
   handFireballTransform: {fileID: 0}
   fireballPrefab: {fileID: 3541248672663946775, guid: 79bfb38d6d1d6a949809939f02ecbeb3, type: 3}
+  FX_Fire_06_2: {fileID: 0}
   iceballPrefab: {fileID: 3541248672663946775, guid: 82c0ebb8b923cec4eb5e18a69125a428, type: 3}
   fireballSpeed: 12
   enemiesManager: {fileID: 0}
@@ -982,111 +977,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &1977027836151843364
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2315270095331521205}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.73, y: 0.55, z: 0.6}
-  m_Center: {x: 0, y: 0.38, z: 0}
---- !u!65 &8674705322030438600
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2315270095331521205}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.52, y: 0.55, z: 0.37}
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!65 &5140869614441875848
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2315270095331521205}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.43, y: 0.52, z: 0.49}
-  m_Center: {x: 0, y: 1.66, z: 0}
---- !u!65 &2887741003519986230
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2315270095331521205}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.3, y: 0.15, z: 0.26}
-  m_Center: {x: 0.69, y: 1.45, z: 0}
---- !u!65 &662573672150782873
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2315270095331521205}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.3, y: 0.15, z: 0.26}
-  m_Center: {x: -0.63, y: 1.45, z: 0}
 --- !u!114 &3003637854191500321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1102,27 +992,6 @@ MonoBehaviour:
   activeColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   interval: 1
   glowEffectPrefab: {fileID: 2681962253317326757, guid: d764731c0f0c28c4f90db6729213aa74, type: 3}
---- !u!65 &665567366521411734
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2315270095331521205}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2327324740981842536
 GameObject:
   m_ObjectHideFlags: 0
