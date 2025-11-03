@@ -546,7 +546,7 @@ public class Player : MonoBehaviour
                 StartCoroutine(StopFireAfter(2.0f, fxFire01));
             }
 
-            //RestarVida(danoFireBall);
+            RestarVida(danoFireBall);
             Destroy(other.gameObject);
         }
 
@@ -559,7 +559,7 @@ public class Player : MonoBehaviour
                 StartCoroutine(StopFireAfter(2.0f, fxFire01_2));
             }
 
-            //RestarVida(danoFireBall);
+            RestarVida(danoFireBall);
             Destroy(other.gameObject);
         }
     }
