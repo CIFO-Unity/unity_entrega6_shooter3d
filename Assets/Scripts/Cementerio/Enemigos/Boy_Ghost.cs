@@ -23,6 +23,9 @@ public class Boy_Ghost : MonoBehaviour
     private float velocidadBoy_GhostCorriendo = 5.0f;
 
     [SerializeField]
+    private GameObject explosionEffect;
+
+    [SerializeField]
     private EnemiesManager enemiesManager; // Referencia al manager de enemigos
 
     private void DesbloquearAtaque()
@@ -91,5 +94,10 @@ public class Boy_Ghost : MonoBehaviour
             if (SoundManager.Instance != null)
                 SoundManager.Instance.PlaySound("RecibirGolpeEnemigo");
         }
+
+        if(other.gameObject.tag == "Player")
+            {
+                explosionEffect.SetActive(true);
+            }
     }
 }

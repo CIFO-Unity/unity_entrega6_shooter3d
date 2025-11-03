@@ -526,9 +526,10 @@ public class Player : MonoBehaviour
             if (fxFire01 != null)
             {
                 fxFire01.SetActive(true);
-                //lo mantenemos en play solo medio segundo
-                StartCoroutine(StopFireAfter(2.5f, fxFire01));
+                //lo mantenemos en play un segundo
+                StartCoroutine(StopFireAfter(1f, fxFire01));
             }
+            
             Destroy(other.gameObject);
 
             // Notificar a EnemiesManager que se ha destruido un enemigo
