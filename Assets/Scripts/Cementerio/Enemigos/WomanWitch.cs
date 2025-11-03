@@ -6,8 +6,6 @@ using UnityEngine;
 public class WomanWitch : MonoBehaviour
 {
     private GameObject fpsController;
-    private bool bloquearAtaque;
-    private int ataqueAleatorio;
     private Vector3 posFPS;
 
     private bool bloquearEnemigoMuerto;
@@ -43,20 +41,14 @@ public class WomanWitch : MonoBehaviour
     [SerializeField]
     private EnemiesManager enemiesManager; // Referencia al manager de enemigos
 
-    private void DesbloquearAtaque()
-    {
-        bloquearAtaque = false;
-        //bloquearEnemigoMuerto = false;
-    }
-
     void Start()
     {
         //instancia del jugador
         fpsController = GameObject.FindWithTag("Player");
-        bloquearAtaque = false;
+
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (!bloquearEnemigoMuerto)
@@ -232,8 +224,8 @@ public class WomanWitch : MonoBehaviour
                     if (SoundManager.Instance != null) SoundManager.Instance.PlaySound("BrujaAtaque");
                     break;
                 case 2:
-                    // Aquí podrías llamar a un método que haga el ataque de rayo
-                    // por ejemplo: ActivarRayo();
+                    // Aquí podrías llamar a un método que conjure dos boy_ghosts
+                    // por ejemplo: ActivarNigromancia();
                     break;
             }
 
