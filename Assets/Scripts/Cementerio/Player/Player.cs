@@ -88,15 +88,13 @@ public class Player : MonoBehaviour
     private GameObject particleImpactBoyGhostPrefab;
     [SerializeField]
     private EnemiesManager enemiesManager;
+    private bool haMuertoLaBruja = false;
 
     [Header("Efectos Locales")]
     [SerializeField]
     private GameObject fxFire01;
     [SerializeField]
     private GameObject fxFire01_2;
-
-    //[SerializeField]
-    //private GameObject explosionEffect; //Boy_Ghost
 
     #region Getters & Setters
 
@@ -210,30 +208,33 @@ public class Player : MonoBehaviour
 
     public void RestarVida(int cantidad)
     {
-        if (cantidad > 0)
+        if (!haMuertoLaBruja)
         {
-            Vida -= cantidad; // Usa el setter, así se aplica Clamp automáticamente
-
-            if (Vida > 0)
+            if (cantidad > 0)
             {
-                if (SoundManager.Instance != null)
+                Vida -= cantidad; // Usa el setter, así se aplica Clamp automáticamente
+
+                if (Vida > 0)
                 {
-                    int golpeAleatorio;
-
-                    // Genera un número diferente al último
-                    do
+                    if (SoundManager.Instance != null)
                     {
-                        golpeAleatorio = Random.Range(1, 7); // 1 a 6 inclusive
-                    } while (golpeAleatorio == ultimoGolpe);
+                        int golpeAleatorio;
 
-                    // Guarda el sonido actual como último
-                    ultimoGolpe = golpeAleatorio;
+                        // Genera un número diferente al último
+                        do
+                        {
+                            golpeAleatorio = Random.Range(1, 7); // 1 a 6 inclusive
+                        } while (golpeAleatorio == ultimoGolpe);
 
-                    // Construye el nombre del sonido
-                    string nombreSonido = $"RecibirGolpe{golpeAleatorio}";
+                        // Guarda el sonido actual como último
+                        ultimoGolpe = golpeAleatorio;
 
-                    // Reproduce el sonido
-                    SoundManager.Instance.PlaySound(nombreSonido);
+                        // Construye el nombre del sonido
+                        string nombreSonido = $"RecibirGolpe{golpeAleatorio}";
+
+                        // Reproduce el sonido
+                        SoundManager.Instance.PlaySound(nombreSonido);
+                    }
                 }
             }
         }
@@ -348,6 +349,8 @@ public class Player : MonoBehaviour
 
     public void Ganar()
     {
+        haMuertoLaBruja = true;
+
         // 1️⃣ Detener el cronómetro y guardar tiempo
         if (cronometro != null)
         {
